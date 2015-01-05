@@ -11,7 +11,7 @@ entry_points = {
 setuptools.setup(
     name='catdex',
     packages=setuptools.find_packages(),
-    include_packaage_data=True,
+    include_package_data=True,
     zip_safe=False,
     install_requires=requires,
     entry_points=entry_points
