@@ -30,6 +30,13 @@ def load_table(table, connection):
         reader = csv.DictReader(table_csv)
         rows = list(preprocess_rows(table, reader))
 
+    # pokemon has a self-referencing key — preevolution_id — so its rows have
+    # to be inserted in dependency order.  Instead of actually figuring it out,
+    # however, we can just use the order column.
+    # XXX Do this right someday
+    if table.name == 'pokemon':
+        rows.sort(key=lambda row: row['order'])
+
     connection.execute(table.insert(), rows)
 
 def preprocess_rows(table, reader):

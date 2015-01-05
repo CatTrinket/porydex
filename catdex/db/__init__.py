@@ -24,6 +24,8 @@ class Pokemon(TableBase):
 
     id = Column(Integer, primary_key=True)
     identifier = Column(Unicode, unique=True, nullable=False)
+    preevolution_id = Column(Integer, ForeignKey('pokemon.id'))
+    order = Column(Integer, unique=True, nullable=False)
 
 class PokemonForm(TableBase):
     """A specific form of a Pokémon.
@@ -38,3 +40,4 @@ class PokemonForm(TableBase):
     form_id = Column(Integer, primary_key=True)
     identifier = Column(Unicode, unique=True, nullable=False)
     is_default = Column(Boolean, nullable=False)
+    order = Column(Integer, unique=True, nullable=False)
