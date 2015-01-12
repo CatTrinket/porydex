@@ -17,6 +17,22 @@ def connect(uri):
 
 ### Tables
 
+class Ability(TableBase):
+    """An ability (e.g. Overgrow, Blaze, Torrent)."""
+
+    __tablename__ = 'abilities'
+
+    id = Column(Integer, primary_key=True)
+    identifier = Column(Unicode, unique=True, nullable=False)
+
+class Move(TableBase):
+    """A move (e.g. Tackle, Growl)."""
+
+    __tablename__ = 'moves'
+
+    id = Column(Integer, primary_key=True)
+    identifier = Column(Unicode, unique=True, nullable=False)
+
 class Pokemon(TableBase):
     """One of the 721 (as of Generation VI) species of Pokémon."""
 
@@ -41,3 +57,11 @@ class PokemonForm(TableBase):
     identifier = Column(Unicode, unique=True, nullable=False)
     is_default = Column(Boolean, nullable=False)
     order = Column(Integer, unique=True, nullable=False)
+
+class Type(TableBase):
+    """One of the eighteen elemental types (Normal, Fire, etc.)"""
+
+    __tablename__ = 'types'
+
+    id = Column(Integer, primary_key=True)
+    identifier = Column(Unicode, unique=True, nullable=False)
