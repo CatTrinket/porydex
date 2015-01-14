@@ -58,6 +58,17 @@ class Generation(TableBase):
     id = Column(Integer, primary_key=True)
     identifier = Column(Unicode, unique=True, nullable=False)
 
+class InternalPokemonIndex(TableBase):
+    """A Pokémon's index in a game's internal Pokémon structs."""
+
+    __tablename__ = 'internal_pokemon_indices'
+    __table_args__ = (pokemon_form_key(),)
+
+    game_id = Column(Integer, ForeignKey('games.id'), primary_key=True)
+    pokemon_id = Column(Integer, primary_key=True)
+    form_id = Column(Integer, primary_key=True)
+    index = Column(Integer, nullable=False)
+
 class Move(TableBase):
     """A move (e.g. Tackle, Growl)."""
 
