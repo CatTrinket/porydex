@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, create_engine
+from sqlalchemy import Column, ForeignKey, ForeignKeyConstraint, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.types import Boolean, Integer, Unicode
@@ -13,6 +13,16 @@ def connect(uri):
     engine = create_engine(uri)
     DBSession.configure(bind=engine)
     return DBSession()
+
+def pokemon_form_key():
+    """Return a new ForeignKeyConstraint describing a composite key to
+    pokemon_forms.
+    """
+
+    return ForeignKeyConstraint(
+        ['pokemon_id', 'form_id'],
+        ['pokemon_forms.pokemon_id', 'pokemon_forms.form_id']
+    )
 
 
 ### Tables
@@ -80,6 +90,19 @@ class PokemonForm(TableBase):
     identifier = Column(Unicode, unique=True, nullable=False)
     is_default = Column(Boolean, nullable=False)
     order = Column(Integer, unique=True, nullable=False)
+
+class PokemonType(TableBase):
+    """One of a Pokémon form's types in a particular generation."""
+
+    __tablename__ = 'pokemon_types'
+    __table_args__ = (pokemon_form_key(),)
+
+    generation_id = Column(Integer, ForeignKey('generations.id'),
+                           primary_key=True)
+    pokemon_id = Column(Integer, primary_key=True)
+    form_id = Column(Integer, primary_key=True)
+    slot = Column(Integer, primary_key=True)
+    type_id = Column(Integer, ForeignKey('types.id'))
 
 class Type(TableBase):
     """One of the eighteen elemental types (Normal, Fire, etc.)"""
