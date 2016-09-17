@@ -4,7 +4,7 @@ import csv
 import pkg_resources
 import sqlalchemy as sqla
 
-import catdex.db
+import porydex.db
 
 
 ### "load" command
@@ -13,10 +13,10 @@ def load(connection):
     """Create the database from scratch."""
 
     print('Creating tables...')
-    catdex.db.TableBase.metadata.create_all(connection)
+    porydex.db.TableBase.metadata.create_all(connection)
 
     print('Loading tables...')
-    for table in catdex.db.TableBase.metadata.sorted_tables:
+    for table in porydex.db.TableBase.metadata.sorted_tables:
         print('  - {}...'.format(table.name))
         load_table(table, connection)
 
@@ -24,7 +24,7 @@ def load_table(table, connection):
     """Load data into an empty table from a CSV."""
 
     csv_path = 'db/data/{0}.csv'.format(table.name)
-    csv_path = pkg_resources.resource_filename('catdex', csv_path)
+    csv_path = pkg_resources.resource_filename('porydex', csv_path)
 
     with open(csv_path, encoding='UTF-8', newline='') as table_csv:
         reader = csv.DictReader(table_csv)
@@ -65,7 +65,7 @@ def reload(connection):
     """Tear down and recreate the database."""
 
     print('Dropping tables...')
-    catdex.db.TableBase.metadata.drop_all(connection)
+    porydex.db.TableBase.metadata.drop_all(connection)
 
     load(connection)
 
@@ -76,7 +76,7 @@ def dump(connection):
     """Update the CSVs from the contents of the database."""
 
     print('Dumping tables...')
-    for table in catdex.db.TableBase.metadata.tables.values():
+    for table in porydex.db.TableBase.metadata.tables.values():
         print('  - {}...'.format(table.name))
         dump_table(table, connection)
 
@@ -88,7 +88,7 @@ def dump_table(table, connection):
     rows = connection.execute(table.select().order_by(*primary_key))
 
     csv_path = 'db/data/{}.csv'.format(table.name)
-    csv_path = pkg_resources.resource_filename('catdex', csv_path)
+    csv_path = pkg_resources.resource_filename('porydex', csv_path)
 
     with open(csv_path, 'w', encoding='UTF-8', newline='') as table_csv:
         writer = csv.writer(table_csv, lineterminator='\n')
@@ -102,11 +102,12 @@ def make_parser():
     """Create and return a parser for command-line arguments."""
 
     # Global stuff
-    parser = argparse.ArgumentParser(description='Manage the catdex database.')
+    parser = argparse.ArgumentParser(
+        description='Manage the porydex database.')
     parser.add_argument('-s', '--sql', action='store_true',
         help='Echo all SQL queries executed.')
     parser.add_argument('database',
-        help='An SQLA URI for the catdex database.')
+        help='An SQLA URI for the porydex database.')
     subparsers = parser.add_subparsers(title='commands')
 
     # load command
@@ -130,7 +131,7 @@ def get_engine(db_uri, echo_sql):
     """Create and return an SQLA engine."""
 
     engine = sqla.create_engine(db_uri, echo=echo_sql)
-    catdex.db.DBSession.configure(bind=engine)
+    porydex.db.DBSession.configure(bind=engine)
     return engine
 
 def main(argv=None):

@@ -5,11 +5,11 @@ requires = [
 ]
 
 entry_points = {
-    'console_scripts': 'catdexdb = catdex.db.cli:main'
+    'console_scripts': 'porydex = porydex.db.cli:main'
 }
 
 setuptools.setup(
-    name='catdex',
+    name='porydex',
     packages=setuptools.find_packages(),
     include_package_data=True,
     zip_safe=False,
