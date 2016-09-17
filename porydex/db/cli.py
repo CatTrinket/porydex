@@ -26,9 +26,18 @@ def load_table(table, connection):
     csv_path = 'db/data/{0}.csv'.format(table.name)
     csv_path = pkg_resources.resource_filename('porydex', csv_path)
 
-    with open(csv_path, encoding='UTF-8', newline='') as table_csv:
-        reader = csv.DictReader(table_csv)
-        rows = list(preprocess_rows(table, reader))
+    try:
+        with open(csv_path, encoding='UTF-8', newline='') as table_csv:
+            reader = csv.DictReader(table_csv)
+            rows = list(preprocess_rows(table, reader))
+    except FileNotFoundError:
+        print('      ! CSV not found: {}.csv'.format(table.name))
+        return
+
+    if not rows:
+        # Passing an empty list for rows means something else, which borks
+        print('      ! CSV empty: {}.csv'.format(table.name))
+        return
 
     # pokemon has a self-referencing key — preevolution_id — so its rows have
     # to be inserted in dependency order.  Instead of actually figuring it out,
