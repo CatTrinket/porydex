@@ -1,4 +1,5 @@
-from sqlalchemy import Column, ForeignKey, ForeignKeyConstraint, create_engine
+from sqlalchemy import (
+    Column, ForeignKey, ForeignKeyConstraint, UniqueConstraint, create_engine)
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.types import Boolean, Integer, Unicode
@@ -24,6 +25,29 @@ def pokemon_form_key():
         ['pokemon_forms.pokemon_id', 'pokemon_forms.form_id']
     )
 
+def generation_pokemon_key():
+    """Return a new ForeignKeyConstraint describing a composite key to
+    generation_pokemon.
+    """
+
+    return ForeignKeyConstraint(
+        ['generation_id', 'pokemon_id'],
+        ['generation_pokemon.generation_id',
+         'generation_pokemon.pokemon_id']
+    )
+
+def generation_pokemon_form_key():
+    """Return a new ForeignKeyConstraint describing a composite key to
+    generation_pokemon_forms.
+    """
+
+    return ForeignKeyConstraint(
+        ['generation_id', 'pokemon_id', 'form_id'],
+        ['generation_pokemon_forms.generation_id',
+         'generation_pokemon_forms.pokemon_id',
+         'generation_pokemon_forms.form_id']
+    )
+
 
 ### Tables
 
@@ -39,11 +63,31 @@ class Game(TableBase):
     """One of the main-series Pokémon games."""
 
     __tablename__ = 'games'
+    __tableargs__ = (UniqueConstraint('id', 'generation_id'),)
 
     id = Column(Integer, primary_key=True)
     identifier = Column(Unicode, unique=True, nullable=False)
     generation_id = Column(Integer, ForeignKey('generations.id'),
                            nullable=False)
+
+class GamePokemonForm(TableBase):
+    """A game that a Pokémon form appears in."""
+
+    __tablename__ = 'game_pokemon_forms'
+    __tableargs__ = (
+        generation_pokemon_form_key(),
+        ForeignKeyConstraint(
+            ['game_id', 'generation_id'],
+            ['games.id', 'games.generation_id']
+        )
+    )
+
+    game_id = Column(Integer, ForeignKey('games.id'), primary_key=True)
+    pokemon_id = Column(Integer, primary_key=True, autoincrement=False)
+    form_id = Column(Integer, primary_key=True, autoincrement=False)
+    generation_id = Column(Integer, ForeignKey('generations.id'),
+                           nullable=False)
+    ingame_internal_id = Column(Integer, nullable=True)  # Temporarily nullable
 
 class Generation(TableBase):
     """One iteration of the Pokémon series.
@@ -58,16 +102,25 @@ class Generation(TableBase):
     id = Column(Integer, primary_key=True)
     identifier = Column(Unicode, unique=True, nullable=False)
 
-class InternalPokemonIndex(TableBase):
-    """A Pokémon's index in a game's internal Pokémon structs."""
+class GenerationPokemon(TableBase):
+    """A generation that a Pokémon appears in."""
 
-    __tablename__ = 'internal_pokemon_indices'
-    __table_args__ = (pokemon_form_key(),)
+    __tablename__ = 'generation_pokemon'
 
-    game_id = Column(Integer, ForeignKey('games.id'), primary_key=True)
-    pokemon_id = Column(Integer, primary_key=True)
-    form_id = Column(Integer, primary_key=True)
-    index = Column(Integer, nullable=False)
+    generation_id = Column(Integer, ForeignKey('generations.id'),
+                           primary_key=True)
+    pokemon_id = Column(Integer, ForeignKey('pokemon.id'), primary_key=True)
+
+class GenerationPokemonForm(TableBase):
+    """A generation that a Pokémon form appears in."""
+
+    __tablename__ = 'generation_pokemon_forms'
+    __table_args__ = (pokemon_form_key(), generation_pokemon_key())
+
+    generation_id = Column(Integer, ForeignKey('generations.id'),
+                           primary_key=True)
+    pokemon_id = Column(Integer, primary_key=True, autoincrement=False)
+    form_id = Column(Integer, primary_key=True, autoincrement=False)
 
 class Move(TableBase):
     """A move (e.g. Tackle, Growl)."""
@@ -106,13 +159,13 @@ class PokemonType(TableBase):
     """One of a Pokémon form's types in a particular generation."""
 
     __tablename__ = 'pokemon_types'
-    __table_args__ = (pokemon_form_key(),)
+    __table_args__ = (pokemon_form_key(), generation_pokemon_form_key())
 
     generation_id = Column(Integer, ForeignKey('generations.id'),
                            primary_key=True)
-    pokemon_id = Column(Integer, primary_key=True)
-    form_id = Column(Integer, primary_key=True)
-    slot = Column(Integer, primary_key=True)
+    pokemon_id = Column(Integer, primary_key=True, autoincrement=False)
+    form_id = Column(Integer, primary_key=True, autoincrement=False)
+    slot = Column(Integer, primary_key=True, autoincrement=False)
     type_id = Column(Integer, ForeignKey('types.id'))
 
 class Type(TableBase):
