@@ -1,7 +1,12 @@
+from collections import OrderedDict
+from operator import attrgetter
+
 from sqlalchemy import (
     Column, ForeignKey, ForeignKeyConstraint, UniqueConstraint, create_engine)
+from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import relationship, sessionmaker
+from sqlalchemy.orm.collections import MappedCollection
 from sqlalchemy.types import Boolean, Integer, Unicode
 
 
@@ -14,6 +19,21 @@ def connect(uri):
     engine = create_engine(uri)
     DBSession.configure(bind=engine)
     return DBSession()
+
+def attr_ordereddict_collection(attr_name):
+    """Return a new mapped collection class using the given attribute as the
+    key.
+    """
+
+    class _Collection(OrderedDict, MappedCollection):
+        def __init__(self, *args, **kwargs):
+            MappedCollection.__init__(self, keyfunc=attrgetter(attr_name))
+            OrderedDict.__init__(self, *args, **kwargs)
+
+    return _Collection
+
+
+### Convenience functions for common multi-column foreign keys
 
 def pokemon_form_key():
     """Return a new ForeignKeyConstraint describing a composite key to
@@ -122,6 +142,9 @@ class GenerationPokemonForm(TableBase):
     pokemon_id = Column(Integer, primary_key=True, autoincrement=False)
     form_id = Column(Integer, primary_key=True, autoincrement=False)
 
+    types = relationship('Type', secondary='pokemon_types',
+                         order_by='PokemonType.slot')
+
 class Move(TableBase):
     """A move (e.g. Tackle, Growl)."""
 
@@ -141,7 +164,7 @@ class Pokemon(TableBase):
     order = Column(Integer, unique=True, nullable=False)
 
 class PokemonForm(TableBase):
-    """A specific form of a Pokémon.
+    """A specific form of a Pokémon, e.g. Sky Shaymin.
 
     Pokémon that don't have multiple forms still have a row in this table for
     their single form.
@@ -154,6 +177,13 @@ class PokemonForm(TableBase):
     identifier = Column(Unicode, unique=True, nullable=False)
     is_default = Column(Boolean, nullable=False)
     order = Column(Integer, unique=True, nullable=False)
+
+    _generation_pokemon_forms = relationship(
+        'GenerationPokemonForm',
+        collection_class=attr_ordereddict_collection('generation_id')
+    )
+
+    types = association_proxy('_generation_pokemon_forms', 'types')
 
 class PokemonType(TableBase):
     """One of a Pokémon form's types in a particular generation."""
