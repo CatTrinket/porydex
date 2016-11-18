@@ -2,23 +2,63 @@ from collections import OrderedDict
 from operator import attrgetter
 
 from sqlalchemy import (
-    Column, ForeignKey, ForeignKeyConstraint, UniqueConstraint, create_engine)
+    Column, ForeignKey, ForeignKeyConstraint, UniqueConstraint, bindparam,
+    create_engine, func, select)
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship, sessionmaker
+from sqlalchemy.ext.hybrid import hybrid_property
+from sqlalchemy.orm import Session, relationship
 from sqlalchemy.orm.collections import MappedCollection
+from sqlalchemy.orm.query import Query
 from sqlalchemy.types import Boolean, Integer, Unicode
 
 
-DBSession = sessionmaker()
 TableBase = declarative_base()
+
+class PorydexQuery(Query):
+    """A query that automatically sets a session_generation_id parameter before
+    executing.
+    """
+
+    def __iter__(self):
+        if 'session_generation_id' not in self._params:
+            q = self.params(
+                session_generation_id=self.session.generation_id)
+            return q.__iter__()
+        else:
+            return super().__iter__()
+
+
+class PorydexSession(Session):
+    """A session that can keep track of a generation id."""
+
+    def __init__(self, *args, generation_id=None, query_cls=PorydexQuery,
+                 **kwargs):
+        super().__init__(*args, query_cls=query_cls, **kwargs)
+        self.generation_id = generation_id
+
+    @property
+    def generation_id(self):
+        return self._generation_id
+
+    @generation_id.setter
+    def generation_id(self, generation_id):
+        if generation_id is None:
+            generation = None
+        else:
+            generation = self.query(Generation).get(generation_id)
+
+            if generation is None:
+                raise ValueError('Invalid generation id')
+
+        self._generation_id = generation_id
+        self.generation = generation
+
 
 def connect(uri):
     """Connect to the db and return a session."""
 
-    engine = create_engine(uri)
-    DBSession.configure(bind=engine)
-    return DBSession()
+    return PorydexSession(bind=create_engine(uri))
 
 def attr_ordereddict_collection(attr_name):
     """Return a new mapped collection class using the given attribute as the
