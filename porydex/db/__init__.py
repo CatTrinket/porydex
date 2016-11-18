@@ -43,6 +43,13 @@ class PorydexSession(Session):
 
     @generation_id.setter
     def generation_id(self, generation_id):
+        """Set the generation id, fetch the corresponding generation, and
+        expire all objects currently in the session so that their relationships
+        will use the new generation id.
+        """
+
+        self.expire_all()
+
         if generation_id is None:
             generation = None
         else:
@@ -220,10 +227,50 @@ class PokemonForm(TableBase):
 
     _generation_pokemon_forms = relationship(
         'GenerationPokemonForm',
-        collection_class=attr_ordereddict_collection('generation_id')
+        collection_class=attr_ordereddict_collection('generation_id'),
+        order_by='GenerationPokemonForm.generation_id'
     )
 
-    types = association_proxy('_generation_pokemon_forms', 'types')
+    _current_gpf = relationship(
+        'GenerationPokemonForm',
+        uselist=False,
+        primaryjoin="""and_(
+            PokemonForm.pokemon_id == GenerationPokemonForm.pokemon_id,
+            PokemonForm.form_id == GenerationPokemonForm.form_id,
+            PokemonForm._current_generation_id ==
+                GenerationPokemonForm.generation_id
+        )"""
+    )
+
+    types = association_proxy('_current_gpf', 'types')
+    all_types = association_proxy('_generation_pokemon_forms', 'types')
+
+    @hybrid_property
+    def _current_generation_id(self):
+        """The session's current generation id; or, if none, the latest
+        generation this Pokémon form was in.
+        """
+
+        generation_id = object_session(self).generation_id
+
+        if generation_id is not None:
+            return generation_id
+        else:
+            return max(self._generation_pokemon_forms)
+
+    @_current_generation_id.expression
+    def _current_generation_id(class_):
+        """The corresponding SQLA expression for _current_generation_id."""
+
+        session_gen = bindparam('session_generation_id')
+
+        latest_gen = (
+            select([func.max(GenerationPokemonForm.generation_id)])
+            .where(GenerationPokemonForm.pokemon_id == class_.pokemon_id)
+            .where(GenerationPokemonForm.form_id == class_.form_id)
+        )
+
+        return func.coalesce(session_gen, latest_gen.as_scalar());
 
 class PokemonType(TableBase):
     """One of a Pokémon form's types in a particular generation."""
