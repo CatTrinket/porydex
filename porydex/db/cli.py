@@ -113,25 +113,26 @@ def make_parser():
     # Global stuff
     parser = argparse.ArgumentParser(
         description='Manage the porydex database.')
-    parser.add_argument('-s', '--sql', action='store_true',
+    parser.add_argument(
+        '-s', '--sql', action='store_true',
         help='Echo all SQL queries executed.')
-    parser.add_argument('database',
-        help='An SQLA URI for the porydex database.')
+    parser.add_argument(
+        'database', help='An SQLA URI for the porydex database.')
     subparsers = parser.add_subparsers(title='commands')
 
     # load command
-    load_parser = subparsers.add_parser('load',
-        help='Create the database from scratch.')
+    load_parser = subparsers.add_parser(
+        'load', help='Create the database from scratch.')
     load_parser.set_defaults(func=load)
 
     # reload command
-    reload_parser = subparsers.add_parser('reload',
-        help='Tear down and recreate the database.')
+    reload_parser = subparsers.add_parser(
+        'reload', help='Tear down and recreate the database.')
     reload_parser.set_defaults(func=reload)
 
     # dump command
-    dump_parser = subparsers.add_parser('dump',
-        help='Update the data CSVs from the contents of the database.')
+    dump_parser = subparsers.add_parser(
+        'dump', help='Update the data CSVs from the contents of the database.')
     dump_parser.set_defaults(func=dump)
 
     return parser
