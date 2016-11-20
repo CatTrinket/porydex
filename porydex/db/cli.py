@@ -136,19 +136,12 @@ def make_parser():
 
     return parser
 
-def get_engine(db_uri, echo_sql):
-    """Create and return an SQLA engine."""
-
-    engine = sqla.create_engine(db_uri, echo=echo_sql)
-    porydex.db.DBSession.configure(bind=engine)
-    return engine
-
 def main(argv=None):
     """Parse arguments and run the appropriate command."""
 
     parser = make_parser()
     args = parser.parse_args(argv)
-    engine = get_engine(args.database, args.sql)
+    engine = sqla.create_engine(args.database, echo=args.sql)
 
     with engine.begin() as connection:
         args.func(connection)
