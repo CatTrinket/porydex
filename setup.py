@@ -1,7 +1,7 @@
 import setuptools
 
 requires = [
-    'SQLAlchemy >=0.9.8, <0.10'
+    'SQLAlchemy >=1.1.4, <1.2'
 ]
 
 entry_points = {
