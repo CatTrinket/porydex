@@ -4,7 +4,7 @@ from sqlalchemy.ext.hybrid import hybrid_property
 import sqlalchemy.orm
 
 from ..core import TableBase
-from ..util import attr_ordereddict_collection
+from ..util import ExistsByGeneration, attr_ordereddict_collection
 
 
 # Convenience functions for common foreign keys
@@ -42,17 +42,19 @@ def generation_pokemon_form_key():
     )
 
 
-class Pokemon(TableBase):
+class Pokemon(TableBase, ExistsByGeneration):
     """One of the 721 (as of Generation VI) species of Pokémon."""
 
     __tablename__ = 'pokemon'
+
+    _by_generation_class_name = 'GenerationPokemon'
 
     id = sa.Column(sa.Integer, primary_key=True)
     identifier = sa.Column(sa.Unicode, unique=True, nullable=False)
     preevolution_id = sa.Column(sa.Integer, sa.ForeignKey('pokemon.id'))
     order = sa.Column(sa.Integer, unique=True, nullable=False)
 
-class PokemonForm(TableBase):
+class PokemonForm(TableBase, ExistsByGeneration):
     """A specific form of a Pokémon, e.g. Sky Shaymin.
 
     Pokémon that don't have multiple forms still have a row in this table for
@@ -61,18 +63,14 @@ class PokemonForm(TableBase):
 
     __tablename__ = 'pokemon_forms'
 
+    _by_generation_class_name = 'GenerationPokemonForm'
+
     pokemon_id = sa.Column(sa.Integer, sa.ForeignKey('pokemon.id'),
                            primary_key=True)
     form_id = sa.Column(sa.Integer, primary_key=True)
     identifier = sa.Column(sa.Unicode, unique=True, nullable=False)
     is_default = sa.Column(sa.Boolean, nullable=False)
     order = sa.Column(sa.Integer, unique=True, nullable=False)
-
-    _generation_pokemon_forms = sa.orm.relationship(
-        'GenerationPokemonForm',
-        collection_class=attr_ordereddict_collection('generation_id'),
-        order_by='GenerationPokemonForm.generation_id'
-    )
 
     _current_gpf = sa.orm.relationship(
         'GenerationPokemonForm',
@@ -86,7 +84,7 @@ class PokemonForm(TableBase):
     )
 
     types = association_proxy('_current_gpf', 'types')
-    all_types = association_proxy('_generation_pokemon_forms', 'types')
+    all_types = association_proxy('_by_generation', 'types')
 
     @hybrid_property
     def _current_generation_id(self):

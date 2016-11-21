@@ -2,23 +2,19 @@ import sqlalchemy as sa
 import sqlalchemy.orm
 
 from ..core import TableBase
-from ..util import attr_ordereddict_collection
+from ..util import ExistsByGeneration
 from .pokemon import pokemon_form_key, generation_pokemon_form_key
 
 
-class Type(TableBase):
+class Type(TableBase, ExistsByGeneration):
     """One of the eighteen elemental types (Normal, Fire, etc.)"""
 
     __tablename__ = 'types'
 
+    _by_generation_class_name = 'GenerationType'
+
     id = sa.Column(sa.Integer, primary_key=True)
     identifier = sa.Column(sa.Unicode, unique=True, nullable=False)
-
-    _by_generation = sa.orm.relationship(
-        'GenerationType',
-        collection_class=attr_ordereddict_collection('generation_id'),
-        order_by='GenerationType.generation_id'
-    )
 
 class PokemonType(TableBase):
     """One of a Pokémon form's types in a particular generation."""
