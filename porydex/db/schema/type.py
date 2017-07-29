@@ -3,18 +3,31 @@ import sqlalchemy.orm
 
 from ..core import TableBase
 from ..util import ExistsByGeneration
+from .language import ByLanguage
 from .pokemon import pokemon_form_key, generation_pokemon_form_key
 
 
-class Type(TableBase, ExistsByGeneration):
+class Type(TableBase, ExistsByGeneration, ByLanguage):
     """One of the eighteen elemental types (Normal, Fire, etc.)"""
 
     __tablename__ = 'types'
 
     _by_generation_class_name = 'GenerationType'
+    _by_language_class_name = 'TypeName'
 
     id = sa.Column(sa.Integer, primary_key=True)
     identifier = sa.Column(sa.Unicode, unique=True, nullable=False)
+
+class TypeName(TableBase):
+    """A Pokémon's name in a particular language."""
+
+    __tablename__ = 'type_names'
+
+    language_id = sa.Column(sa.Integer, sa.ForeignKey('languages.id'),
+                            primary_key=True)
+    type_id = sa.Column(sa.Integer, sa.ForeignKey('types.id'),
+                        primary_key=True)
+    name = sa.Column(sa.Text, nullable=False)
 
 class PokemonType(TableBase):
     """One of a Pokémon form's types in a particular generation."""

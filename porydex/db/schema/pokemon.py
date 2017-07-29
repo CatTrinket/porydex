@@ -3,6 +3,7 @@ from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.ext.hybrid import hybrid_property
 import sqlalchemy.orm
 
+from .language import ByLanguage
 from ..core import TableBase
 from ..util import ExistsByGeneration, attr_ordereddict_collection
 
@@ -42,17 +43,29 @@ def generation_pokemon_form_key():
     )
 
 
-class Pokemon(TableBase, ExistsByGeneration):
-    """One of the 721 (as of Generation VI) species of Pokémon."""
+class Pokemon(TableBase, ExistsByGeneration, ByLanguage):
+    """One of the 802 (as of Generation 7) species of Pokémon."""
 
     __tablename__ = 'pokemon'
 
     _by_generation_class_name = 'GenerationPokemon'
+    _by_language_class_name = 'PokemonName'
 
     id = sa.Column(sa.Integer, primary_key=True)
     identifier = sa.Column(sa.Unicode, unique=True, nullable=False)
     preevolution_id = sa.Column(sa.Integer, sa.ForeignKey('pokemon.id'))
     order = sa.Column(sa.Integer, unique=True, nullable=False)
+
+class PokemonName(TableBase):
+    """A Pokémon's name in a particular language."""
+
+    __tablename__ = 'pokemon_names'
+
+    language_id = sa.Column(sa.Integer, sa.ForeignKey('languages.id'),
+                            primary_key=True)
+    pokemon_id = sa.Column(sa.Integer, sa.ForeignKey('pokemon.id'),
+                           primary_key=True)
+    name = sa.Column(sa.Text, nullable=False)
 
 class PokemonForm(TableBase, ExistsByGeneration):
     """A specific form of a Pokémon, e.g. Sky Shaymin.
