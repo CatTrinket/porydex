@@ -2,6 +2,7 @@ from collections import OrderedDict
 from operator import attrgetter
 
 import sqlalchemy as sa
+import sqlalchemy.ext.hybrid
 from sqlalchemy.orm.collections import MappedCollection
 
 
@@ -43,7 +44,6 @@ class ExistsByGeneration():
             gen_id.is_(None),
             class_._by_generation.any(generation_id=gen_id)
         )
-
 
 def attr_ordereddict_collection(attr_name):
     """Return a new mapped collection class using the given attribute as the

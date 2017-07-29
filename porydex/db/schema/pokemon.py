@@ -110,7 +110,7 @@ class PokemonForm(TableBase, ExistsByGeneration):
         if generation_id is not None:
             return generation_id
         else:
-            return max(self._generation_pokemon_forms)
+            return max(self._by_generation.keys())
 
     @_current_generation_id.expression
     def _current_generation_id(class_):
@@ -119,10 +119,9 @@ class PokemonForm(TableBase, ExistsByGeneration):
         session_gen = sa.bindparam('session_generation_id')
 
         latest_gen = (
-            sa.select([sa.func.max('generation_pokemon_forms.generation_id')])
-            .where('generation_pokemon_forms.pokemon_id == '
-                   'pokemon_forms.pokemon_id')
-            .where('generation_pokemon_forms.form_id == pokemon_forms')
+            sa.select([sa.func.max(GenerationPokemonForm.generation_id)])
+            .where(GenerationPokemonForm.pokemon_id == class_.pokemon_id)
+            .where(GenerationPokemonForm.form_id == class_.form_id)
         )
 
         return sa.func.coalesce(session_gen, latest_gen.as_scalar())
@@ -163,7 +162,8 @@ class GamePokemonForm(TableBase):
         )
     )
 
-    game_id = sa.Column(sa.Integer, sa.ForeignKey('games.id'), primary_key=True)
+    game_id = sa.Column(sa.Integer, sa.ForeignKey('games.id'),
+                        primary_key=True)
     pokemon_id = sa.Column(sa.Integer, primary_key=True, autoincrement=False)
     form_id = sa.Column(sa.Integer, primary_key=True, autoincrement=False)
     generation_id = sa.Column(sa.Integer, sa.ForeignKey('generations.id'),
