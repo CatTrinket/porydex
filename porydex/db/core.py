@@ -3,7 +3,22 @@ import sqlalchemy.orm
 import sqlalchemy.ext.declarative
 
 
-TableBase = sa.ext.declarative.declarative_base()
+class TableBase(sa.ext.declarative.declarative_base()):
+    __abstract__ = True
+
+    def __repr__(self):
+        args = []
+
+        for column in sa.orm.object_mapper(self).column_attrs:
+            key = column.key
+            val = getattr(self, key)
+
+            args.append('{}={}'.format(key, repr(val)))
+
+        return '{type}({args})'.format(
+            type=type(self).__name__,
+            args=', '.join(args)
+        )
 
 class PorydexQuery(sa.orm.Query):
     """A query that automatically sets a session_generation_id parameter before
