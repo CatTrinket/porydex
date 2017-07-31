@@ -48,4 +48,4 @@ class ByLanguage():
         """
 
         # XXX This should be an actual relationship
-        return self.names[ENGLISH_ID]
+        return self.names.get(ENGLISH_ID)

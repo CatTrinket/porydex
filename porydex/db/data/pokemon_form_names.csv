@@ -1,0 +1,286 @@
+language_id,pokemon_id,form_id,form_name,full_name
+3,3,2,Mega Venusaur,Mega Venusaur
+3,6,2,Mega Charizard X,Mega Charizard X
+3,6,3,Mega Charizard Y,Mega Charizard Y
+3,9,2,Mega Blastoise,Mega Blastoise
+3,15,2,Mega Beedrill,Mega Beedrill
+3,18,2,Mega Pidgeot,Mega Pidgeot
+3,19,2,Alola Form,Alolan Rattata
+3,20,2,Alola Form,Alolan Raticate
+3,25,2,Cosplay Pikachu,Cosplay Pikachu
+3,25,3,Pikachu Rock Star,Pikachu Rock Star
+3,25,4,Pikachu Belle,Pikachu Belle
+3,25,5,Pikachu Pop Star,Pikachu Pop Star
+3,25,6,"Pikachu, Ph.D.","Pikachu, Ph.D."
+3,25,7,Pikachu Libre,Pikachu Libre
+3,25,8,Original Cap,Original Cap Pikachu
+3,25,9,Hoenn Cap,Hoenn Cap Pikachu
+3,25,10,Sinnoh Cap,Sinnoh Cap Pikachu
+3,25,11,Unova Cap,Unova Cap Pikachu
+3,25,12,Kalos Cap,Kalos Cap Pikachu
+3,25,13,Alola Cap,Alola Cap Pikachu
+3,26,2,Alola Form,Alolan Raichu
+3,27,2,Alola Form,Alolan Sandshrew
+3,28,2,Alola Form,Alolan Sandslash
+3,37,2,Alola Form,Alolan Vulpix
+3,38,2,Alola Form,Alolan Ninetales
+3,50,2,Alola Form,Alolan Diglett
+3,51,2,Alola Form,Alolan Dugtrio
+3,52,2,Alola Form,Alolan Meowth
+3,53,2,Alola Form,Alolan Persian
+3,65,2,Mega Alakazam,Mega Alakazam
+3,74,2,Alola Form,Alolan Geodude
+3,75,2,Alola Form,Alolan Graveler
+3,76,2,Alola Form,Alolan Golem
+3,80,2,Mega Slowbro,Mega Slowbro
+3,88,2,Alola Form,Alolan Grimer
+3,89,2,Alola Form,Alolan Muk
+3,94,2,Mega Gengar,Mega Gengar
+3,103,2,Alola Form,Alolan Exeggutor
+3,105,2,Alola Form,Alolan Marowak
+3,115,2,Mega Kangaskhan,Mega Kangaskhan
+3,127,2,Mega Pinsir,Mega Pinsir
+3,130,2,Mega Gyarados,Mega Gyarados
+3,142,2,Mega Aerodactyl,Mega Aerodactyl
+3,150,2,Mega Mewtwo X,Mega Mewtwo X
+3,150,3,Mega Mewtwo Y,Mega Mewtwo Y
+3,181,2,Mega Ampharos,Mega Ampharos
+3,201,1,A,Unown A
+3,201,2,B,Unown B
+3,201,3,C,Unown C
+3,201,4,D,Unown D
+3,201,5,E,Unown E
+3,201,6,F,Unown F
+3,201,7,G,Unown G
+3,201,8,H,Unown H
+3,201,9,I,Unown I
+3,201,10,J,Unown J
+3,201,11,K,Unown K
+3,201,12,L,Unown L
+3,201,13,M,Unown M
+3,201,14,N,Unown N
+3,201,15,O,Unown O
+3,201,16,P,Unown P
+3,201,17,Q,Unown Q
+3,201,18,R,Unown R
+3,201,19,S,Unown S
+3,201,20,T,Unown T
+3,201,21,U,Unown U
+3,201,22,V,Unown V
+3,201,23,W,Unown W
+3,201,24,X,Unown X
+3,201,25,Y,Unown Y
+3,201,26,Z,Unown Z
+3,201,27,!,Unown !
+3,201,28,?,Unown ?
+3,208,2,Mega Steelix,Mega Steelix
+3,212,2,Mega Scizor,Mega Scizor
+3,214,2,Mega Heracross,Mega Heracross
+3,229,2,Mega Houndoom,Mega Houndoom
+3,248,2,Mega Tyranitar,Mega Tyranitar
+3,254,2,Mega Sceptile,Mega Sceptile
+3,257,2,Mega Blaziken,Mega Blaziken
+3,260,2,Mega Swampert,Mega Swampert
+3,282,2,Mega Gardevoir,Mega Gardevoir
+3,302,2,Mega Sableye,Mega Sableye
+3,303,2,Mega Mawile,Mega Mawile
+3,306,2,Mega Aggron,Mega Aggron
+3,308,2,Mega Medicham,Mega Medicham
+3,310,2,Mega Manectric,Mega Manectric
+3,319,2,Mega Sharpedo,Mega Sharpedo
+3,323,2,Mega Camerupt,Mega Camerupt
+3,334,2,Mega Altaria,Mega Altaria
+3,351,2,Sunny Form,Sunny Castform
+3,351,3,Rainy Form,Rainy Castform
+3,351,4,Snowy Form,Snowy Castform
+3,354,2,Mega Banette,Mega Banette
+3,359,2,Mega Absol,Mega Absol
+3,362,2,Mega Glalie,Mega Glalie
+3,373,2,Mega Salamence,Mega Salamence
+3,376,2,Mega Metagross,Mega Metagross
+3,380,2,Mega Latias,Mega Latias
+3,381,2,Mega Latios,Mega Latios
+3,382,2,Primal Reversion,Primal Kyogre
+3,383,2,Primal Reversion,Primal Groudon
+3,384,2,Mega Rayquaza,Mega Rayquaza
+3,386,1,Normal Forme,Normal Deoxys
+3,386,2,Attack Forme,Attack Deoxys
+3,386,3,Defense Forme,Defense Deoxys
+3,386,4,Speed Forme,Speed Deoxys
+3,412,1,Plant Cloak,Plant Burmy
+3,412,2,Sandy Cloak,Sandy Burmy
+3,412,3,Trash Cloak,Trash Burmy
+3,413,1,Plant Cloak,Plant Wormadam
+3,413,2,Sandy Cloak,Sandy Wormadam
+3,413,3,Trash Cloak,Trash Wormadam
+3,421,1,Overcast Form,Overcast Cherrim
+3,421,2,Sunshine Form,Sunshine Cherrim
+3,422,1,West Sea,West Shellos
+3,422,2,East Sea,East Shellos
+3,423,1,West Sea,West Gastrodon
+3,423,2,East Sea,East Gastrodon
+3,428,2,Mega Lopunny,Mega Lopunny
+3,445,2,Mega Garchomp,Mega Garchomp
+3,448,2,Mega Lucario,Mega Lucario
+3,460,2,Mega Abomasnow,Mega Abomasnow
+3,475,2,Mega Gallade,Mega Gallade
+3,479,2,Heat Rotom,Heat Rotom
+3,479,3,Wash Rotom,Wash Rotom
+3,479,4,Frost Rotom,Frost Rotom
+3,479,5,Fan Rotom,Fan Rotom
+3,479,6,Mow Rotom,Mow Rotom
+3,487,1,Altered Forme,Altered Giratina
+3,487,2,Origin Forme,Origin Giratina
+3,492,1,Land Forme,Land Shaymin
+3,492,2,Sky Forme,Sky Shaymin
+3,493,1,Normal Type,Normal Arceus
+3,493,2,Fire Type,Fire Arceus
+3,493,3,Water Type,Water Arceus
+3,493,4,Grass Type,Grass Arceus
+3,493,5,Electric Type,Electric Arceus
+3,493,6,Ice Type,Ice Arceus
+3,493,7,Fighting Type,Fighting Arceus
+3,493,8,Poison Type,Poison Arceus
+3,493,9,Ground Type,Ground Arceus
+3,493,10,Flying Type,Flying Arceus
+3,493,11,Psychic Type,Psychic Arceus
+3,493,12,Bug Type,Bug Arceus
+3,493,13,Rock Type,Rock Arceus
+3,493,14,Ghost Type,Ghost Arceus
+3,493,15,Dragon Type,Dragon Arceus
+3,493,16,Dark Type,Dark Arceus
+3,493,17,Steel Type,Steel Arceus
+3,493,18,Fairy Type,Fairy Arceus
+3,531,2,Mega Audino,Mega Audino
+3,550,1,Red-Striped Form,Red-Striped Basculin
+3,550,2,Blue-Striped Form,Blue-Striped Basculin
+3,555,1,Standard Mode,Standard Darmanitan
+3,555,2,Zen Mode,Zen Darmanitan
+3,585,1,Spring Form,Spring Deerling
+3,585,2,Summer Form,Summer Deerling
+3,585,3,Autumn Form,Autumn Deerling
+3,585,4,Winter Form,Winter Deerling
+3,586,1,Spring Form,Spring Sawsbuck
+3,586,2,Summer Form,Summer Sawsbuck
+3,586,3,Autumn Form,Autumn Sawsbuck
+3,586,4,Winter Form,Winter Sawsbuck
+3,641,1,Incarnate Forme,Incarnate Tornadus
+3,641,2,Therian Forme,Therian Tornadus
+3,642,1,Incarnate Forme,Incarnate Thundurus
+3,642,2,Therian Forme,Therian Thundurus
+3,645,1,Incarnate Forme,Incarnate Landorus
+3,645,2,Therian Forme,Therian Landorus
+3,646,2,White Kyurem,White Kyurem
+3,646,3,Black Kyurem,Black Kyurem
+3,647,1,Ordinary Form,Ordinary Keldeo
+3,647,2,Resolute Form,Resolute Keldeo
+3,648,1,Aria Forme,Aria Meloetta
+3,648,2,Pirouette Forme,Pirouette Meloetta
+3,649,2,Douse Drive,Douse Genesect
+3,649,3,Shock Drive,Shock Genesect
+3,649,4,Burn Drive,Burn Genesect
+3,649,5,Chill Drive,Chill Genesect
+3,658,2,Ash-Greninja,Ash-Greninja
+3,666,1,Icy Snow Pattern,Icy Snow Vivillon
+3,666,2,Polar Pattern,Polar Vivillon
+3,666,3,Tundra Pattern,Tundra Vivillon
+3,666,4,Continental Pattern,Continental Vivillon
+3,666,5,Garden Pattern,Garden Vivillon
+3,666,6,Elegant Pattern,Elegant Vivillon
+3,666,7,Meadow Pattern,Meadow Vivillon
+3,666,8,Modern Pattern,Modern Vivillon
+3,666,9,Marine Pattern,Marine Vivillon
+3,666,10,Archipelago Pattern,Archipelago Vivillon
+3,666,11,High Plains Pattern,High Plains Vivillon
+3,666,12,Sandstorm Pattern,Sandstorm Vivillon
+3,666,13,River Pattern,River Vivillon
+3,666,14,Monsoon Pattern,Monsoon Vivillon
+3,666,15,Savanna Pattern,Savanna Vivillon
+3,666,16,Sun Pattern,Sun Vivillon
+3,666,17,Ocean Pattern,Ocean Vivillon
+3,666,18,Jungle Pattern,Jungle Vivillon
+3,666,19,Fancy Pattern,Fancy Vivillon
+3,666,20,Poké Ball Pattern,Poké Ball Vivillon
+3,669,1,Red Flower,Red Flabébé
+3,669,2,Yellow Flower,Yellow Flabébé
+3,669,3,Orange Flower,Orange Flabébé
+3,669,4,Blue Flower,Blue Flabébé
+3,669,5,White Flower,White Flabébé
+3,670,1,Red Flower,Red Floette
+3,670,2,Yellow Flower,Yellow Floette
+3,670,3,Orange Flower,Orange Floette
+3,670,4,Blue Flower,Blue Floette
+3,670,5,White Flower,White Floette
+3,670,6,Eternal Flower,Eternal Floette
+3,671,1,Red Flower,Red Florges
+3,671,2,Yellow Flower,Yellow Florges
+3,671,3,Orange Flower,Orange Florges
+3,671,4,Blue Flower,Blue Florges
+3,671,5,White Flower,White Florges
+3,676,1,Natural Form,Natural Furfrou
+3,676,2,Heart Trim,Heart Furfrou
+3,676,3,Star Trim,Star Furfrou
+3,676,4,Diamond Trim,Diamond Furfrou
+3,676,5,La Reine Trim,La Reine Furfrou
+3,676,6,Kabuki Trim,Kabuki Furfrou
+3,676,7,Pharaoh Trim,Pharaoh Furfrou
+3,676,8,Debutante Trim,Debutante Furfrou
+3,676,9,Matron Trim,Matron Furfrou
+3,676,10,Dandy Trim,Dandy Furfrou
+3,678,1,Female,Female Meowstic
+3,678,2,Male,Male Meowstic
+3,681,1,Shield Forme,Shield Aegislash
+3,681,2,Blade Forme,Blade Aegislash
+3,710,1,Small Size,Small Pumpkaboo
+3,710,2,Average Size,Average Pumpkaboo
+3,710,3,Large Size,Large Pumpkaboo
+3,710,4,Super Size,Super Pumpkaboo
+3,711,1,Small Size,Small Gourgeist
+3,711,2,Average Size,Average Gourgeist
+3,711,3,Large Size,Large Gourgeist
+3,711,4,Super Size,Super Gourgeist
+3,716,1,Neutral Mode,Neutral Xerneas
+3,716,2,Active Mode,Active Xerneas
+3,718,1,10% Forme,10% Zygarde
+3,718,2,50% Forme,50% Zygarde
+3,718,3,Complete Forme,Complete Zygarde
+3,719,2,Mega Diancie,Mega Diancie
+3,720,1,Hoopa Confined,Hoopa Confined
+3,720,2,Hoopa Unbound,Hoopa Unbound
+3,741,1,Baile Style,Baile Oricorio
+3,741,2,Pom-Pom Style,Pom-Pom Oricorio
+3,741,3,Pa'u Style,Pa'u Oricorio
+3,741,4,Sensu Style,Sensu Oricorio
+3,745,1,Midday Form,Midday Lycanroc
+3,745,2,Midnight Form,Midnight Lycanroc
+3,746,1,Solo Form,Solo Wishiwashi
+3,746,2,School Form,School Wishiwashi
+3,773,1,Type: Normal,Normal Silvally
+3,773,2,Type: Fire,Fire Silvally
+3,773,3,Type: Water,Water Silvally
+3,773,4,Type: Grass,Grass Silvally
+3,773,5,Type: Electric,Electric Silvally
+3,773,6,Type: Ice,Ice Silvally
+3,773,7,Type: Fighting,Fighting Silvally
+3,773,8,Type: Poison,Poison Silvally
+3,773,9,Type: Ground,Ground Silvally
+3,773,10,Type: Flying,Flying Silvally
+3,773,11,Type: Psychic,Psychic Silvally
+3,773,12,Type: Bug,Bug Silvally
+3,773,13,Type: Rock,Rock Silvally
+3,773,14,Type: Ghost,Ghost Silvally
+3,773,15,Type: Dragon,Dragon Silvally
+3,773,16,Type: Dark,Dark Silvally
+3,773,17,Type: Steel,Steel Silvally
+3,773,18,Type: Fairy,Fairy Silvally
+3,774,1,Meteor Form,Meteor Minior
+3,774,2,Red Core,Red Minior
+3,774,3,Orange Core,Orange Minior
+3,774,4,Yellow Core,Yellow Minior
+3,774,5,Green Core,Green Minior
+3,774,6,Blue Core,Blue Minior
+3,774,7,Indigo Core,Indigo Minior
+3,774,8,Violet Core,Violet Minior
+3,778,1,Disguised Form,Disguised Mimikyu
+3,778,2,Busted Form,Busted Mimikyu
+3,801,2,Original Color,Original Magearna

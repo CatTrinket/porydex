@@ -67,7 +67,7 @@ class PokemonName(TableBase):
                            primary_key=True)
     name = sa.Column(sa.Text, nullable=False)
 
-class PokemonForm(TableBase, ExistsByGeneration):
+class PokemonForm(TableBase, ExistsByGeneration, ByLanguage):
     """A specific form of a Pokémon, e.g. Sky Shaymin.
 
     Pokémon that don't have multiple forms still have a row in this table for
@@ -77,6 +77,7 @@ class PokemonForm(TableBase, ExistsByGeneration):
     __tablename__ = 'pokemon_forms'
 
     _by_generation_class_name = 'GenerationPokemonForm'
+    _by_language_class_name = 'PokemonFormName'
 
     pokemon_id = sa.Column(sa.Integer, sa.ForeignKey('pokemon.id'),
                            primary_key=True)
@@ -84,6 +85,8 @@ class PokemonForm(TableBase, ExistsByGeneration):
     identifier = sa.Column(sa.Unicode, unique=True, nullable=False)
     is_default = sa.Column(sa.Boolean, nullable=False)
     order = sa.Column(sa.Integer, unique=True, nullable=False)
+
+    full_name = association_proxy('_by_language', 'full_name')
 
     _current_gpf = sa.orm.relationship(
         'GenerationPokemonForm',
@@ -127,6 +130,19 @@ class PokemonForm(TableBase, ExistsByGeneration):
         )
 
         return sa.func.coalesce(session_gen, latest_gen.as_scalar())
+
+class PokemonFormName(TableBase):
+    """A Pokémon form's name in a particular language."""
+
+    __tablename__ = 'pokemon_form_names'
+    __table_args__ = (pokemon_form_key(),)
+
+    language_id = sa.Column(sa.Integer, sa.ForeignKey('languages.id'),
+                            primary_key=True)
+    pokemon_id = sa.Column(sa.Integer, primary_key=True)
+    form_id = sa.Column(sa.Integer, primary_key=True)
+    name = sa.Column('form_name', sa.Text, nullable=False)
+    full_name = sa.Column(sa.Text, nullable=False)
 
 class GenerationPokemon(TableBase):
     """A generation that a Pokémon appears in."""
