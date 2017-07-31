@@ -93,7 +93,8 @@ class PokemonForm(TableBase, ExistsByGeneration):
             PokemonForm.form_id == GenerationPokemonForm.form_id,
             PokemonForm._current_generation_id ==
                 GenerationPokemonForm.generation_id
-        )"""
+        )""",
+        lazy='subquery'
     )
 
     types = association_proxy('_current_gpf', 'types')
@@ -120,6 +121,7 @@ class PokemonForm(TableBase, ExistsByGeneration):
 
         latest_gen = (
             sa.select([sa.func.max(GenerationPokemonForm.generation_id)])
+            .correlate(class_)
             .where(GenerationPokemonForm.pokemon_id == class_.pokemon_id)
             .where(GenerationPokemonForm.form_id == class_.form_id)
         )
