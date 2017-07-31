@@ -86,7 +86,10 @@ class PokemonForm(TableBase, ExistsByGeneration, ByLanguage):
     is_default = sa.Column(sa.Boolean, nullable=False)
     order = sa.Column(sa.Integer, unique=True, nullable=False)
 
+    pokemon = sa.orm.relationship('Pokemon')
     full_name = association_proxy('_by_language', 'full_name')
+    types = association_proxy('_current_gpf', 'types')
+    all_types = association_proxy('_by_generation', 'types')
 
     _current_gpf = sa.orm.relationship(
         'GenerationPokemonForm',
@@ -99,9 +102,6 @@ class PokemonForm(TableBase, ExistsByGeneration, ByLanguage):
         )""",
         lazy='subquery'
     )
-
-    types = association_proxy('_current_gpf', 'types')
-    all_types = association_proxy('_by_generation', 'types')
 
     @hybrid_property
     def _current_generation_id(self):
