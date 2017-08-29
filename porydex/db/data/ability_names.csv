@@ -1,0 +1,233 @@
+language_id,ability_id,name
+3,1,Stench
+3,2,Drizzle
+3,3,Speed Boost
+3,4,Battle Armor
+3,5,Sturdy
+3,6,Damp
+3,7,Limber
+3,8,Sand Veil
+3,9,Static
+3,10,Volt Absorb
+3,11,Water Absorb
+3,12,Oblivious
+3,13,Cloud Nine
+3,14,Compound Eyes
+3,15,Insomnia
+3,16,Color Change
+3,17,Immunity
+3,18,Flash Fire
+3,19,Shield Dust
+3,20,Own Tempo
+3,21,Suction Cups
+3,22,Intimidate
+3,23,Shadow Tag
+3,24,Rough Skin
+3,25,Wonder Guard
+3,26,Levitate
+3,27,Effect Spore
+3,28,Synchronize
+3,29,Clear Body
+3,30,Natural Cure
+3,31,Lightning Rod
+3,32,Serene Grace
+3,33,Swift Swim
+3,34,Chlorophyll
+3,35,Illuminate
+3,36,Trace
+3,37,Huge Power
+3,38,Poison Point
+3,39,Inner Focus
+3,40,Magma Armor
+3,41,Water Veil
+3,42,Magnet Pull
+3,43,Soundproof
+3,44,Rain Dish
+3,45,Sand Stream
+3,46,Pressure
+3,47,Thick Fat
+3,48,Early Bird
+3,49,Flame Body
+3,50,Run Away
+3,51,Keen Eye
+3,52,Hyper Cutter
+3,53,Pickup
+3,54,Truant
+3,55,Hustle
+3,56,Cute Charm
+3,57,Plus
+3,58,Minus
+3,59,Forecast
+3,60,Sticky Hold
+3,61,Shed Skin
+3,62,Guts
+3,63,Marvel Scale
+3,64,Liquid Ooze
+3,65,Overgrow
+3,66,Blaze
+3,67,Torrent
+3,68,Swarm
+3,69,Rock Head
+3,70,Drought
+3,71,Arena Trap
+3,72,Vital Spirit
+3,73,White Smoke
+3,74,Pure Power
+3,75,Shell Armor
+3,76,Air Lock
+3,77,Tangled Feet
+3,78,Motor Drive
+3,79,Rivalry
+3,80,Steadfast
+3,81,Snow Cloak
+3,82,Gluttony
+3,83,Anger Point
+3,84,Unburden
+3,85,Heatproof
+3,86,Simple
+3,87,Dry Skin
+3,88,Download
+3,89,Iron Fist
+3,90,Poison Heal
+3,91,Adaptability
+3,92,Skill Link
+3,93,Hydration
+3,94,Solar Power
+3,95,Quick Feet
+3,96,Normalize
+3,97,Sniper
+3,98,Magic Guard
+3,99,No Guard
+3,100,Stall
+3,101,Technician
+3,102,Leaf Guard
+3,103,Klutz
+3,104,Mold Breaker
+3,105,Super Luck
+3,106,Aftermath
+3,107,Anticipation
+3,108,Forewarn
+3,109,Unaware
+3,110,Tinted Lens
+3,111,Filter
+3,112,Slow Start
+3,113,Scrappy
+3,114,Storm Drain
+3,115,Ice Body
+3,116,Solid Rock
+3,117,Snow Warning
+3,118,Honey Gather
+3,119,Frisk
+3,120,Reckless
+3,121,Multitype
+3,122,Flower Gift
+3,123,Bad Dreams
+3,124,Pickpocket
+3,125,Sheer Force
+3,126,Contrary
+3,127,Unnerve
+3,128,Defiant
+3,129,Defeatist
+3,130,Cursed Body
+3,131,Healer
+3,132,Friend Guard
+3,133,Weak Armor
+3,134,Heavy Metal
+3,135,Light Metal
+3,136,Multiscale
+3,137,Toxic Boost
+3,138,Flare Boost
+3,139,Harvest
+3,140,Telepathy
+3,141,Moody
+3,142,Overcoat
+3,143,Poison Touch
+3,144,Regenerator
+3,145,Big Pecks
+3,146,Sand Rush
+3,147,Wonder Skin
+3,148,Analytic
+3,149,Illusion
+3,150,Imposter
+3,151,Infiltrator
+3,152,Mummy
+3,153,Moxie
+3,154,Justified
+3,155,Rattled
+3,156,Magic Bounce
+3,157,Sap Sipper
+3,158,Prankster
+3,159,Sand Force
+3,160,Iron Barbs
+3,161,Zen Mode
+3,162,Victory Star
+3,163,Turboblaze
+3,164,Teravolt
+3,165,Aroma Veil
+3,166,Flower Veil
+3,167,Cheek Pouch
+3,168,Protean
+3,169,Fur Coat
+3,170,Magician
+3,171,Bulletproof
+3,172,Competitive
+3,173,Strong Jaw
+3,174,Refrigerate
+3,175,Sweet Veil
+3,176,Stance Change
+3,177,Gale Wings
+3,178,Mega Launcher
+3,179,Grass Pelt
+3,180,Symbiosis
+3,181,Tough Claws
+3,182,Pixilate
+3,183,Gooey
+3,184,Aerilate
+3,185,Parental Bond
+3,186,Dark Aura
+3,187,Fairy Aura
+3,188,Aura Break
+3,189,Primordial Sea
+3,190,Desolate Land
+3,191,Delta Stream
+3,192,Stamina
+3,193,Wimp Out
+3,194,Emergency Exit
+3,195,Water Compaction
+3,196,Merciless
+3,197,Shields Down
+3,198,Stakeout
+3,199,Water Bubble
+3,200,Steelworker
+3,201,Berserk
+3,202,Slush Rush
+3,203,Long Reach
+3,204,Liquid Voice
+3,205,Triage
+3,206,Galvanize
+3,207,Surge Surfer
+3,208,Schooling
+3,209,Disguise
+3,210,Battle Bond
+3,211,Power Construct
+3,212,Corrosion
+3,213,Comatose
+3,214,Queenly Majesty
+3,215,Innards Out
+3,216,Dancer
+3,217,Battery
+3,218,Fluffy
+3,219,Dazzling
+3,220,Soul-Heart
+3,221,Tangling Hair
+3,222,Receiver
+3,223,Power of Alchemy
+3,224,Beast Boost
+3,225,RKS System
+3,226,Electric Surge
+3,227,Psychic Surge
+3,228,Misty Surge
+3,229,Grassy Surge
+3,230,Full Metal Body
+3,231,Shadow Shield
+3,232,Prism Armor
