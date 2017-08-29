@@ -86,7 +86,7 @@ class PokemonForm(TableBase, ExistsByGeneration, ByLanguage):
     is_default = sa.Column(sa.Boolean, nullable=False)
     order = sa.Column(sa.Integer, unique=True, nullable=False)
 
-    pokemon = sa.orm.relationship('Pokemon')
+    pokemon = sa.orm.relationship('Pokemon', lazy='joined')
     full_name = association_proxy('_by_language', 'full_name')
     types = association_proxy('_current_gpf', 'types')
     all_types = association_proxy('_by_generation', 'types')
@@ -100,7 +100,7 @@ class PokemonForm(TableBase, ExistsByGeneration, ByLanguage):
             PokemonForm._current_generation_id ==
                 GenerationPokemonForm.generation_id
         )""",
-        lazy='subquery'
+        lazy='joined'
     )
 
     @hybrid_property
@@ -166,7 +166,7 @@ class GenerationPokemonForm(TableBase):
     form_id = sa.Column(sa.Integer, primary_key=True, autoincrement=False)
 
     types = sa.orm.relationship('Type', secondary='pokemon_types',
-                                order_by='PokemonType.slot')
+                                order_by='PokemonType.slot', lazy='subquery')
 
 class GamePokemonForm(TableBase):
     """A game that a Pokémon form appears in."""
