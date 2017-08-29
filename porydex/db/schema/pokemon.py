@@ -3,7 +3,7 @@ from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.ext.hybrid import hybrid_property
 import sqlalchemy.orm
 
-from .language import ByLanguage
+from .language import ByLanguage, ENGLISH_ID
 from ..core import TableBase
 from ..util import ExistsByGeneration, attr_ordereddict_collection
 
@@ -87,7 +87,7 @@ class PokemonForm(TableBase, ExistsByGeneration, ByLanguage):
     order = sa.Column(sa.Integer, unique=True, nullable=False)
 
     pokemon = sa.orm.relationship('Pokemon', lazy='joined')
-    full_name = association_proxy('_by_language', 'full_name')
+    full_names = association_proxy('_names', 'full_name')
     types = association_proxy('_current_gpf', 'types')
     all_types = association_proxy('_by_generation', 'types')
 
@@ -130,6 +130,14 @@ class PokemonForm(TableBase, ExistsByGeneration, ByLanguage):
         )
 
         return sa.func.coalesce(session_gen, latest_gen.as_scalar())
+
+    @property
+    def full_name(self):
+        """The Pokémon form's full name in the current language (currently
+        hardcoded as English).
+        """
+
+        return self.full_names.get(ENGLISH_ID) or self.pokemon.name
 
 class PokemonFormName(TableBase):
     """A Pokémon form's name in a particular language."""
