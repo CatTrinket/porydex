@@ -19,6 +19,7 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,25,11,Unova Cap,Unova Cap Pikachu
 3,25,12,Kalos Cap,Kalos Cap Pikachu
 3,25,13,Alola Cap,Alola Cap Pikachu
+3,25,14,Partner Cap,Partner Cap Pikachu
 3,26,2,Alola Form,Alolan Raichu
 3,27,2,Alola Form,Alolan Sandshrew
 3,28,2,Alola Form,Alolan Sandslash
@@ -253,6 +254,7 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,741,4,Sensu Style,Sensu Oricorio
 3,745,1,Midday Form,Midday Lycanroc
 3,745,2,Midnight Form,Midnight Lycanroc
+3,745,3,Dusk Form,Dusk Lycanroc
 3,746,1,Solo Form,Solo Wishiwashi
 3,746,2,School Form,School Wishiwashi
 3,773,1,Type: Normal,Normal Silvally
@@ -283,4 +285,7 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,774,8,Violet Core,Violet Minior
 3,778,1,Disguised Form,Disguised Mimikyu
 3,778,2,Busted Form,Busted Mimikyu
+3,800,2,Dusk Mane,Dusk Mane Necrozma
+3,800,3,Dawn Wings,Dawn Wings Necrozma
+3,800,4,Ultra Necrozma,Ultra Necrozma
 3,801,2,Original Color,Original Magearna

@@ -44,6 +44,7 @@ pokemon_id,form_id,identifier,is_default,order
 25,11,pikachu-unova-cap,False,44
 25,12,pikachu-kalos-cap,False,45
 25,13,pikachu-alola-cap,False,46
+25,14,pikachu-partner-cap,False,1051
 26,1,raichu,True,47
 26,2,raichu-alola,False,48
 27,1,sandshrew,True,49
@@ -965,6 +966,7 @@ pokemon_id,form_id,identifier,is_default,order
 744,1,rockruff,True,964
 745,1,lycanroc-midday,True,965
 745,2,lycanroc-midnight,False,966
+745,3,lycanroc-dusk,False,1052
 746,1,wishiwashi-solo,True,967
 746,2,wishiwashi-school,False,968
 747,1,mareanie,True,969
@@ -1046,6 +1048,14 @@ pokemon_id,form_id,identifier,is_default,order
 798,1,kartana,True,1045
 799,1,guzzlord,True,1046
 800,1,necrozma,True,1047
+800,2,necrozma-dusk-mane,False,1053
+800,3,necrozma-dawn-wings,False,1054
+800,4,necrozma-ultra,False,1055
 801,1,magearna,True,1048
 801,2,magearna-original,False,1049
 802,1,marshadow,True,1050
+803,1,poipole,True,1056
+804,1,naganadel,True,1057
+805,1,stakataka,True,1058
+806,1,blacephalon,True,1059
+807,1,zeraora,True,1060
