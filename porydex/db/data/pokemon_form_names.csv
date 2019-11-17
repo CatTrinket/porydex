@@ -2,11 +2,13 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,3,2,Mega Venusaur,Mega Venusaur
 3,6,2,Mega Charizard X,Mega Charizard X
 3,6,3,Mega Charizard Y,Mega Charizard Y
+3,6,4,Gigantamax,Gigantamax Charizard
 3,9,2,Mega Blastoise,Mega Blastoise
+3,12,2,Gigantamax,Gigantamax Butterfree
 3,15,2,Mega Beedrill,Mega Beedrill
 3,18,2,Mega Pidgeot,Mega Pidgeot
-3,19,2,Alola Form,Alolan Rattata
-3,20,2,Alola Form,Alolan Raticate
+3,19,2,Alolan Form,Alolan Rattata
+3,20,2,Alolan Form,Alolan Raticate
 3,25,2,Cosplay Pikachu,Cosplay Pikachu
 3,25,3,Pikachu Rock Star,Pikachu Rock Star
 3,25,4,Pikachu Belle,Pikachu Belle
@@ -20,29 +22,43 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,25,12,Kalos Cap,Kalos Cap Pikachu
 3,25,13,Alola Cap,Alola Cap Pikachu
 3,25,14,Partner Cap,Partner Cap Pikachu
-3,26,2,Alola Form,Alolan Raichu
-3,27,2,Alola Form,Alolan Sandshrew
-3,28,2,Alola Form,Alolan Sandslash
-3,37,2,Alola Form,Alolan Vulpix
-3,38,2,Alola Form,Alolan Ninetales
-3,50,2,Alola Form,Alolan Diglett
-3,51,2,Alola Form,Alolan Dugtrio
-3,52,2,Alola Form,Alolan Meowth
-3,53,2,Alola Form,Alolan Persian
+3,25,16,Gigantamax,Gigantamax Pikachu
+3,26,2,Alolan Form,Alolan Raichu
+3,27,2,Alolan Form,Alolan Sandshrew
+3,28,2,Alolan Form,Alolan Sandslash
+3,37,2,Alolan Form,Alolan Vulpix
+3,38,2,Alolan Form,Alolan Ninetales
+3,50,2,Alolan Form,Alolan Diglett
+3,51,2,Alolan Form,Alolan Dugtrio
+3,52,2,Alolan Form,Alolan Meowth
+3,52,3,Galarian Form,Galarian Meowth
+3,52,4,Gigantamax,Gigantamax Meowth
+3,53,2,Alolan Form,Alolan Persian
 3,65,2,Mega Alakazam,Mega Alakazam
-3,74,2,Alola Form,Alolan Geodude
-3,75,2,Alola Form,Alolan Graveler
-3,76,2,Alola Form,Alolan Golem
+3,68,2,Gigantamax,Gigantamax Machamp
+3,74,2,Alolan Form,Alolan Geodude
+3,75,2,Alolan Form,Alolan Graveler
+3,76,2,Alolan Form,Alolan Golem
+3,77,2,Galarian Form,Galarian Ponyta
+3,78,2,Galarian Form,Galarian Rapidash
 3,80,2,Mega Slowbro,Mega Slowbro
-3,88,2,Alola Form,Alolan Grimer
-3,89,2,Alola Form,Alolan Muk
+3,83,2,Galarian Form,Galarian Farfetch'd
+3,88,2,Alolan Form,Alolan Grimer
+3,89,2,Alolan Form,Alolan Muk
 3,94,2,Mega Gengar,Mega Gengar
-3,103,2,Alola Form,Alolan Exeggutor
-3,105,2,Alola Form,Alolan Marowak
+3,94,3,Gigantamax,Gigantamax Gengar
+3,99,2,Gigantamax,Gigantamax Kingler
+3,103,2,Alolan Form,Alolan Exeggutor
+3,105,2,Alolan Form,Alolan Marowak
+3,110,2,Galarian Form,Galarian Weezing
 3,115,2,Mega Kangaskhan,Mega Kangaskhan
+3,122,2,Galarian Form,Galarian Mr. Mime
 3,127,2,Mega Pinsir,Mega Pinsir
 3,130,2,Mega Gyarados,Mega Gyarados
+3,131,2,Gigantamax,Gigantamax Lapras
+3,133,3,Gigantamax,Gigantamax Eevee
 3,142,2,Mega Aerodactyl,Mega Aerodactyl
+3,143,2,Gigantamax,Gigantamax Snorlax
 3,150,2,Mega Mewtwo X,Mega Mewtwo X
 3,150,3,Mega Mewtwo Y,Mega Mewtwo Y
 3,181,2,Mega Ampharos,Mega Ampharos
@@ -77,11 +93,14 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,208,2,Mega Steelix,Mega Steelix
 3,212,2,Mega Scizor,Mega Scizor
 3,214,2,Mega Heracross,Mega Heracross
+3,222,2,Galarian Form,Galarian Corsola
 3,229,2,Mega Houndoom,Mega Houndoom
 3,248,2,Mega Tyranitar,Mega Tyranitar
 3,254,2,Mega Sceptile,Mega Sceptile
 3,257,2,Mega Blaziken,Mega Blaziken
 3,260,2,Mega Swampert,Mega Swampert
+3,263,2,Galarian Form,Galarian Zigzagoon
+3,264,2,Galarian Form,Galarian Linoone
 3,282,2,Mega Gardevoir,Mega Gardevoir
 3,302,2,Mega Sableye,Mega Sableye
 3,303,2,Mega Mawile,Mega Mawile
@@ -155,8 +174,13 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,531,2,Mega Audino,Mega Audino
 3,550,1,Red-Striped Form,Red-Striped Basculin
 3,550,2,Blue-Striped Form,Blue-Striped Basculin
+3,554,2,Galarian Form,Galarian Darumaka
 3,555,1,Standard Mode,Standard Darmanitan
 3,555,2,Zen Mode,Zen Darmanitan
+3,555,3,Galarian Form,Galarian Darmanitan
+3,555,4,Zen Galarian Form,Zen Galarian Darmanitan
+3,562,2,Galarian Form,Galarian Yamask
+3,569,2,Gigantamax,Gigantamax Garbodor
 3,585,1,Spring Form,Spring Deerling
 3,585,2,Summer Form,Summer Deerling
 3,585,3,Autumn Form,Autumn Deerling
@@ -165,6 +189,7 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,586,2,Summer Form,Summer Sawsbuck
 3,586,3,Autumn Form,Autumn Sawsbuck
 3,586,4,Winter Form,Winter Sawsbuck
+3,618,2,Galarian Form,Galarian Stunfisk
 3,641,1,Incarnate Forme,Incarnate Tornadus
 3,641,2,Therian Forme,Therian Tornadus
 3,642,1,Incarnate Forme,Incarnate Thundurus
@@ -289,3 +314,44 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,800,3,Dawn Wings,Dawn Wings Necrozma
 3,800,4,Ultra Necrozma,Ultra Necrozma
 3,801,2,Original Color,Original Magearna
+3,809,2,Gigantamax,Gigantamax Melmetal
+3,823,2,Gigantamax,Gigantamax Corviknight
+3,826,2,Gigantamax,Gigantamax Orbeetle
+3,834,2,Gigantamax,Gigantamax Drednaw
+3,839,2,Gigantamax,Gigantamax Coalossal
+3,841,2,Gigantamax,Gigantamax Flapple
+3,842,2,Gigantamax,Gigantamax Appletun
+3,844,2,Gigantamax,Gigantamax Sandaconda
+3,845,2,Gulping Form,Gulping Cramorant
+3,845,3,Gorging Form,Gorging Cramorant
+3,849,1,Amped Form,Amped Toxtricity
+3,849,2,Low Key Form,Low Key Toxtricity
+3,849,3,Gigantamax,Gigantamax Toxtricity
+3,851,2,Gigantamax,Gigantamax Centiskorch
+3,854,2,Authentic,Authentic Sinistea
+3,855,2,Authentic,Authentic Polteageist
+3,858,2,Gigantamax,Gigantamax Hatterene
+3,861,2,Gigantamax,Gigantamax Grimmsnarl
+3,869,1,Vanilla Cream,Vanilla Cream Alcremie
+3,869,2,Ruby Cream,Ruby Cream Alcremie
+3,869,3,Matcha Cream,Matcha Cream Alcremie
+3,869,4,Mint Cream,Mint Cream Alcremie
+3,869,5,Lemon Cream,Lemon Cream Alcremie
+3,869,6,Salted Cream,Salted Cream Alcremie
+3,869,7,Ruby Swirl,Ruby Swirl Alcremie
+3,869,8,Caramel Swirl,Caramel Swirl Alcremie
+3,869,9,Rainbow Swirl,Rainbow Swirl Alcremie
+3,869,10,Gigantamax,Gigantamax Alcremie
+3,875,1,Ice Face,Ice Eiscue
+3,875,2,Noice Face,Noice Eiscue
+3,876,1,Female,Female Indeedee
+3,876,2,Male,Male Indeedee
+3,877,1,Full Belly Mode,Full Belly Morpeko
+3,877,2,Hangry Mode,Hangry Morpeko
+3,879,2,Gigantamax,Gigantamax Copperajah
+3,884,2,Gigantamax,Gigantamax Duraludon
+3,888,1,Hero of Many Battles,Zacian
+3,888,2,Crowned Sword,Crowned Sword Zacian
+3,889,1,Hero of Many Battles,Zamazenta
+3,889,2,Crowned Shield,Crowned Shield Zamazenta
+3,890,2,Eternamax,Eternamax Eternatus
