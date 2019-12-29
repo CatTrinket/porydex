@@ -1195,9 +1195,9 @@ pokemon_id,form_id,identifier,is_default,order
 885,1,dreepy,True,1194
 886,1,drakloak,True,1195
 887,1,dragapult,True,1196
-888,1,zacian,True,1197
-888,2,zacian-crowned-sword,False,1198
-889,1,zamazenta,True,1199
-889,2,zamazenta-crowned-shield,False,1200
+888,1,zacian-hero,True,1197
+888,2,zacian-crowned,False,1198
+889,1,zamazenta-hero,True,1199
+889,2,zamazenta-crowned,False,1200
 890,1,eternatus,True,1201
 890,2,eternatus-eternamax,False,1202
