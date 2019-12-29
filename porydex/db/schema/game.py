@@ -20,7 +20,7 @@ class Game(TableBase):
     """One of the main-series Pokémon games."""
 
     __tablename__ = 'games'
-    __tableargs__ = (sa.UniqueConstraint('id', 'generation_id'),)
+    __table_args__ = (sa.UniqueConstraint('id', 'generation_id'),)
 
     id = sa.Column(sa.Integer, primary_key=True)
     identifier = sa.Column(sa.Unicode, unique=True, nullable=False)

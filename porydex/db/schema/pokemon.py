@@ -180,7 +180,7 @@ class GamePokemonForm(TableBase):
     """A game that a Pokémon form appears in."""
 
     __tablename__ = 'game_pokemon_forms'
-    __tableargs__ = (
+    __table_args__ = (
         generation_pokemon_form_key(),
         sa.ForeignKeyConstraint(
             ['game_id', 'generation_id'],
