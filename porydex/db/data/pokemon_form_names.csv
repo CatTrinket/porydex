@@ -328,8 +328,10 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,849,2,Low Key Form,Low Key Toxtricity
 3,849,3,Gigantamax,Gigantamax Toxtricity
 3,851,2,Gigantamax,Gigantamax Centiskorch
-3,854,2,Authentic,Authentic Sinistea
-3,855,2,Authentic,Authentic Polteageist
+3,854,1,Phony Form,Phony Sinistea
+3,854,2,Antique Form,Antique Sinistea
+3,855,1,Phony Form,Phony Polteageist
+3,855,2,Antique Form,Antique Polteageist
 3,858,2,Gigantamax,Gigantamax Hatterene
 3,861,2,Gigantamax,Gigantamax Grimmsnarl
 3,869,1,Vanilla Cream,Vanilla Cream Alcremie

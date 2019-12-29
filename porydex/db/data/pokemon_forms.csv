@@ -1143,10 +1143,10 @@ pokemon_id,form_id,identifier,is_default,order
 851,2,centiskorch-gigantamax,False,1148
 852,1,clobbopus,True,1149
 853,1,grapploct,True,1150
-854,1,sinistea,True,1151
-854,2,sinistea-authentic,False,1152
-855,1,polteageist,True,1153
-855,2,polteageist-authentic,False,1154
+854,1,sinistea-phony,True,1151
+854,2,sinistea-antique,False,1152
+855,1,polteageist-phony,True,1153
+855,2,polteageist-antique,False,1154
 856,1,hatenna,True,1155
 857,1,hattrem,True,1156
 858,1,hatterene,True,1157
