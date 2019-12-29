@@ -90,6 +90,9 @@ class PokemonForm(TableBase, ExistsByGeneration, ByLanguage):
     full_names = association_proxy('_names', 'full_name')
     types = association_proxy('_current_gpf', 'types')
     all_types = association_proxy('_by_generation', 'types')
+    pokemon_abilities = association_proxy('_current_gpf', 'pokemon_abilities')
+    all_pokemon_abilities = association_proxy(
+        '_by_generation', 'pokemon_abilities')
 
     _current_gpf = sa.orm.relationship(
         'GenerationPokemonForm',
