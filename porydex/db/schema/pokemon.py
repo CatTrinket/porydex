@@ -85,6 +85,8 @@ class PokemonForm(TableBase, ExistsByGeneration, ByLanguage):
     identifier = sa.Column(sa.Unicode, unique=True, nullable=False)
     is_default = sa.Column(sa.Boolean, nullable=False)
     order = sa.Column(sa.Integer, unique=True, nullable=False)
+    height_m = sa.Column(sa.Numeric(4, 1), nullable=False)
+    weight_kg = sa.Column(sa.Numeric(4, 1))
 
     pokemon = sa.orm.relationship('Pokemon', lazy='joined')
     full_names = association_proxy('_names', 'full_name')
