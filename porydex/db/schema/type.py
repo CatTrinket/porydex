@@ -36,6 +36,17 @@ class PokemonType(TableBase):
     """One of a Pokémon form's types in a particular generation."""
 
     __tablename__ = 'pokemon_types'
+
+    generation_id = sa.Column(
+        sa.Integer, sa.ForeignKey('generations.id'), primary_key=True)
+    pokemon_id = sa.Column(sa.Integer, primary_key=True, autoincrement=False)
+    form_id = sa.Column(sa.Integer, primary_key=True, autoincrement=False)
+    slot = sa.Column(sa.Integer, primary_key=True, autoincrement=False)
+    type_id = sa.Column(sa.Integer, sa.ForeignKey('types.id'))
+
+    pokemon = sa.orm.relationship('PokemonForm', lazy='joined')
+    type = sa.orm.relationship('Type', lazy='joined')
+
     __table_args__ = (
         pokemon_form_key(),
         generation_pokemon_form_key(),
@@ -44,13 +55,6 @@ class PokemonType(TableBase):
             ['generation_types.generation_id', 'generation_types.type_id']
         )
     )
-
-    generation_id = sa.Column(sa.Integer, sa.ForeignKey('generations.id'),
-                              primary_key=True)
-    pokemon_id = sa.Column(sa.Integer, primary_key=True, autoincrement=False)
-    form_id = sa.Column(sa.Integer, primary_key=True, autoincrement=False)
-    slot = sa.Column(sa.Integer, primary_key=True, autoincrement=False)
-    type_id = sa.Column(sa.Integer, sa.ForeignKey('types.id'))
 
 class GenerationType(TableBase):
     """A generation that a type appears in."""

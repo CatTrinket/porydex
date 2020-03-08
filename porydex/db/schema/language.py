@@ -39,7 +39,7 @@ class ByLanguage():
             self._by_language_class_name,
             collection_class=attr_ordereddict_collection('language_id'),
             order_by='{0}.language_id'.format(self._by_language_class_name),
-            lazy='subquery'
+            lazy='selectin'
         )
 
     @property

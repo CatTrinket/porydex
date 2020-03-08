@@ -94,6 +94,6 @@ class PokemonAbility(TableBase):
     _generation_pokemon_form = sa.orm.relationship(
         GenerationPokemonForm,
         backref=sa.orm.backref(
-            'pokemon_abilities', order_by=slot, lazy='subquery')
+            'pokemon_abilities', order_by=slot, lazy='selectin')
     )
-    ability = sa.orm.relationship(Ability)
+    ability = sa.orm.relationship(Ability, lazy='joined')

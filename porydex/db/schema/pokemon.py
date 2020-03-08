@@ -179,8 +179,9 @@ class GenerationPokemonForm(TableBase):
     pokemon_id = sa.Column(sa.Integer, primary_key=True, autoincrement=False)
     form_id = sa.Column(sa.Integer, primary_key=True, autoincrement=False)
 
-    types = sa.orm.relationship('Type', secondary='pokemon_types',
-                                order_by='PokemonType.slot', lazy='subquery')
+    types = sa.orm.relationship(
+        'Type', secondary='pokemon_types', order_by='PokemonType.slot',
+        lazy='selectin')
 
 class GamePokemonForm(TableBase):
     """A game that a Pokémon form appears in."""
