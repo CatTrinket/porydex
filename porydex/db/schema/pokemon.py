@@ -3,7 +3,7 @@ from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.ext.hybrid import hybrid_property
 import sqlalchemy.orm
 
-from .language import ByLanguage, ENGLISH_ID
+from .language import ENGLISH_ID, ByLanguage
 from ..core import TableBase
 from ..util import ExistsByGeneration, attr_ordereddict_collection
 
@@ -95,6 +95,7 @@ class PokemonForm(TableBase, ExistsByGeneration, ByLanguage):
     pokemon_abilities = association_proxy('_current_gpf', 'pokemon_abilities')
     all_pokemon_abilities = association_proxy(
         '_by_generation', 'pokemon_abilities')
+    stats = association_proxy('_current_gpf', 'stats')
 
     _current_gpf = sa.orm.relationship(
         'GenerationPokemonForm',

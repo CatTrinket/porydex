@@ -1,0 +1,10 @@
+language_id,stat_id,name,abbreviation
+3,1,HP,HP
+3,2,Attack,Atk
+3,3,Defense,Def
+3,4,Special Attack,SpA
+3,5,Special Defense,SpD
+3,6,Speed,Spe
+3,7,Special,Spc
+3,8,Accuracy,Acc
+3,9,Evasion,Eva

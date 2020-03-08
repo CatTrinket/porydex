@@ -1,0 +1,10 @@
+id,identifier,is_transient
+1,hp,False
+2,attack,False
+3,defense,False
+4,special-attack,False
+5,special-defense,False
+6,speed,False
+7,special,False
+8,accuracy,True
+9,evasion,True
