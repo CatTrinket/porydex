@@ -15,6 +15,7 @@ class Generation(TableBase):
 
     id = sa.Column(sa.Integer, primary_key=True)
     identifier = sa.Column(sa.Unicode, unique=True, nullable=False)
+    type_chart_id = sa.Column(sa.ForeignKey('type_charts.id'), nullable=False)
 
 class Game(TableBase):
     """One of the main-series Pokémon games."""

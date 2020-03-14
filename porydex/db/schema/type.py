@@ -1,3 +1,6 @@
+import enum
+import fractions
+
 import sqlalchemy as sa
 from sqlalchemy.ext.associationproxy import association_proxy
 import sqlalchemy.orm
@@ -68,3 +71,45 @@ class GenerationType(TableBase):
 
     pokemon = sa.orm.relationship('PokemonForm', secondary='pokemon_types',
                                   order_by='PokemonForm.order')
+
+class TypeChart(TableBase):
+    """One iteration of the type chart, used in one or more generations.
+
+    The Gen 1 type chart, the Gen 2-5 type chart, and the Gen 6+ type chart are
+    each one row in this table.  The type_matchups table then lists all the
+    matchups for each type chart, rather than listing all of them for every
+    single generation.
+    """
+
+    __tablename__ = 'type_charts'
+
+    id = sa.Column(sa.Integer, primary_key=True)
+    identifier = sa.Column(sa.Unicode, unique=True, nullable=False)
+
+class TypeMatchupResult(enum.Enum):
+    """An enum containing the possible damage modifiers that can be the result
+    of a type matchup.
+    """
+
+    no_effect = fractions.Fraction(0)
+    not_very_effective = fractions.Fraction(1, 2)
+    neutral = fractions.Fraction(1)
+    super_effective = fractions.Fraction(2)
+
+    def __init__(self, damage_multiplier):
+        self.damage_multiplier = damage_multiplier
+
+    def __str__(self):
+        return self.name
+
+class TypeMatchup(TableBase):
+    """The resulting damage modifier when a particular type of move hits a
+    particular type of Pokémon.
+    """
+
+    __tablename__ = 'type_matchups'
+
+    type_chart_id = sa.Column(sa.ForeignKey(TypeChart.id), primary_key=True)
+    attacking_type_id = sa.Column(sa.ForeignKey(Type.id), primary_key=True)
+    defending_type_id = sa.Column(sa.ForeignKey(Type.id), primary_key=True)
+    result = sa.Column(sa.Enum(TypeMatchupResult), nullable=False)
