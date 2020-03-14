@@ -12,7 +12,7 @@ from porydex.db.core import TableBase
 class Stat(TableBase, ByLanguage):
     """One of the stats that Pokémon have (HP, Attack, etc.)
 
-    This includes the main six status, RBY's Special stat, Accuracy, and
+    This includes the main six stats, RBY's Special stat, Accuracy, and
     Evasion.
     """
 
