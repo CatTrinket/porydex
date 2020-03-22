@@ -1,4 +1,5 @@
 from .ability import *
+from .egg_group import *
 from .game import *
 from .language import *
 from .move import *
