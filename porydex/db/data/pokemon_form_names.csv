@@ -22,6 +22,7 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,25,12,Kalos Cap,Kalos Cap Pikachu
 3,25,13,Alola Cap,Alola Cap Pikachu
 3,25,14,Partner Cap,Partner Cap Pikachu
+3,25,15,Partner Pikachu,Partner Pikachu
 3,25,16,Gigantamax,Gigantamax Pikachu
 3,26,2,Alolan Form,Alolan Raichu
 3,27,2,Alolan Form,Alolan Sandshrew
@@ -56,6 +57,7 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,127,2,Mega Pinsir,Mega Pinsir
 3,130,2,Mega Gyarados,Mega Gyarados
 3,131,2,Gigantamax,Gigantamax Lapras
+3,133,2,Partner Eevee,Partner Eevee
 3,133,3,Gigantamax,Gigantamax Eevee
 3,142,2,Mega Aerodactyl,Mega Aerodactyl
 3,143,2,Gigantamax,Gigantamax Snorlax
