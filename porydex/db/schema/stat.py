@@ -57,11 +57,17 @@ class PokemonStat(TableBase):
     effort_yield = sa.Column(
         sa.Integer,
         doc="""The number of effort points this Pokémon yields upon being
-        knocked out.  Null for all stats in Gen 1-2, which use a different
-        system.  Never null in Gen 3 and up; an actual 0 is used if applicable.
-        (The only exception, for the time being, is Deoxys in Gen 3; all
-        non-Normal Formes' effort yield is null until I figure out how that
-        works.)"""
+        knocked out.
+
+        Null for all stats in Gen 1-2 and Let's Go, which use different
+        systems.  Never null in Gen 3 and up; an actual 0 is used if
+        applicable.
+
+        The only exception is Deoxys in Gen 3, which is a weird edge case; all
+        non-Normal Formes' effort yield is null for now.  They may or may not
+        be given Normal Forme's yield at some point.  See:
+        https://github.com/CatTrinket/porydex/issues/21
+        """
     )
 
     _generation_pokemon_form = sa.orm.relationship(

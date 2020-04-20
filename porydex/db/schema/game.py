@@ -15,6 +15,16 @@ class Generation(TableBase):
 
     id = sa.Column(sa.Integer, primary_key=True)
     identifier = sa.Column(sa.Unicode, unique=True, nullable=False)
+    is_base_series = sa.Column(
+        sa.Boolean, nullable=False,
+        doc="""True if this is a traditional generation; False for Let's Go.
+
+        Let's Go is officially part of the main series (we wouldn't be covering
+        it otherwise), but it functions differently enough that we need *some*
+        sort of term to distinguish it.
+        """
+    )
+    release_order = sa.Column(sa.Integer, unique=True, nullable=False)
     type_chart_id = sa.Column(sa.ForeignKey('type_charts.id'), nullable=False)
 
 class Game(TableBase):

@@ -3,6 +3,7 @@ from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.ext.hybrid import hybrid_property
 import sqlalchemy.orm
 
+from .game import Generation
 from .language import ENGLISH_ID, ByLanguage
 from ..core import TableBase
 from ..util import ExistsByGeneration, attr_ordereddict_collection
@@ -113,6 +114,9 @@ class PokemonForm(TableBase, ExistsByGeneration, ByLanguage):
     def _current_generation_id(self):
         """The session's current generation id; or, if none, the latest
         generation this Pokémon form was in.
+
+        Let's Go never counts as the latest generation unless this Pokémon form
+        has only appeared in Let's Go.
         """
 
         generation_id = sa.orm.session.object_session(self).generation_id
@@ -120,7 +124,11 @@ class PokemonForm(TableBase, ExistsByGeneration, ByLanguage):
         if generation_id is not None:
             return generation_id
         else:
-            return max(self._by_generation.keys())
+            generation = max(
+                (gpf.generation for gpf in self._by_generation.values()),
+                key=lambda gen: (gen.is_base_series, gen.release_order)
+            )
+            return generation.id
 
     @_current_generation_id.expression
     def _current_generation_id(class_):
@@ -129,10 +137,19 @@ class PokemonForm(TableBase, ExistsByGeneration, ByLanguage):
         session_gen = sa.bindparam('session_generation_id')
 
         latest_gen = (
-            sa.select([sa.func.max(GenerationPokemonForm.generation_id)])
-            .correlate(class_)
+            sa.select([Generation.id])
+            .select_from(sa.join(
+                Generation,
+                GenerationPokemonForm,
+                Generation.id == GenerationPokemonForm.generation_id
+            ))
             .where(GenerationPokemonForm.pokemon_id == class_.pokemon_id)
             .where(GenerationPokemonForm.form_id == class_.form_id)
+            .order_by(
+                Generation.is_base_series.desc(),
+                Generation.release_order.desc()
+            )
+            .limit(1)
         )
 
         return sa.func.coalesce(session_gen, latest_gen.as_scalar())

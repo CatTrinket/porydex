@@ -47,6 +47,7 @@ pokemon_id,form_id,identifier,is_default,order,height_m,weight_kg
 25,12,pikachu-kalos-cap,False,48,0.4,6.0
 25,13,pikachu-alola-cap,False,49,0.4,6.0
 25,14,pikachu-partner-cap,False,50,0.4,6.0
+25,15,pikachu-partner,False,10001,0.4,6.0
 25,16,pikachu-gigantamax,False,51,21.0,
 26,1,raichu,True,52,0.8,30.0
 26,2,raichu-alola,False,53,0.7,21.0
@@ -189,6 +190,7 @@ pokemon_id,form_id,identifier,is_default,order,height_m,weight_kg
 131,2,lapras-gigantamax,False,218,24.0,
 132,1,ditto,True,219,0.3,4.0
 133,1,eevee,True,220,0.3,6.5
+133,2,eevee-partner,False,10000,0.3,6.5
 133,3,eevee-gigantamax,False,221,18.0,
 134,1,vaporeon,True,222,1.0,29.0
 135,1,jolteon,True,223,0.8,24.5
