@@ -65,34 +65,34 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,150,3,Mega Mewtwo Y,Mega Mewtwo Y
 3,172,2,Spiky-Eared Pichu,Spiky-Eared Pichu
 3,181,2,Mega Ampharos,Mega Ampharos
-3,201,1,A,Unown A
-3,201,2,B,Unown B
-3,201,3,C,Unown C
-3,201,4,D,Unown D
-3,201,5,E,Unown E
-3,201,6,F,Unown F
-3,201,7,G,Unown G
-3,201,8,H,Unown H
-3,201,9,I,Unown I
-3,201,10,J,Unown J
-3,201,11,K,Unown K
-3,201,12,L,Unown L
-3,201,13,M,Unown M
-3,201,14,N,Unown N
-3,201,15,O,Unown O
-3,201,16,P,Unown P
-3,201,17,Q,Unown Q
-3,201,18,R,Unown R
-3,201,19,S,Unown S
-3,201,20,T,Unown T
-3,201,21,U,Unown U
-3,201,22,V,Unown V
-3,201,23,W,Unown W
-3,201,24,X,Unown X
-3,201,25,Y,Unown Y
-3,201,26,Z,Unown Z
-3,201,27,!,Unown !
-3,201,28,?,Unown ?
+3,201,1,Unown A,Unown A
+3,201,2,Unown B,Unown B
+3,201,3,Unown C,Unown C
+3,201,4,Unown D,Unown D
+3,201,5,Unown E,Unown E
+3,201,6,Unown F,Unown F
+3,201,7,Unown G,Unown G
+3,201,8,Unown H,Unown H
+3,201,9,Unown I,Unown I
+3,201,10,Unown J,Unown J
+3,201,11,Unown K,Unown K
+3,201,12,Unown L,Unown L
+3,201,13,Unown M,Unown M
+3,201,14,Unown N,Unown N
+3,201,15,Unown O,Unown O
+3,201,16,Unown P,Unown P
+3,201,17,Unown Q,Unown Q
+3,201,18,Unown R,Unown R
+3,201,19,Unown S,Unown S
+3,201,20,Unown T,Unown T
+3,201,21,Unown U,Unown U
+3,201,22,Unown V,Unown V
+3,201,23,Unown W,Unown W
+3,201,24,Unown X,Unown X
+3,201,25,Unown Y,Unown Y
+3,201,26,Unown Z,Unown Z
+3,201,27,Unown !,Unown !
+3,201,28,Unown ?,Unown ?
 3,208,2,Mega Steelix,Mega Steelix
 3,212,2,Mega Scizor,Mega Scizor
 3,214,2,Mega Heracross,Mega Heracross
