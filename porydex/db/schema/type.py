@@ -113,3 +113,6 @@ class TypeMatchup(TableBase):
     attacking_type_id = sa.Column(sa.ForeignKey(Type.id), primary_key=True)
     defending_type_id = sa.Column(sa.ForeignKey(Type.id), primary_key=True)
     result = sa.Column(sa.Enum(TypeMatchupResult), nullable=False)
+
+    attacking_type = sa.orm.relationship(Type, foreign_keys=[attacking_type_id])
+    defending_type = sa.orm.relationship(Type, foreign_keys=[defending_type_id])
