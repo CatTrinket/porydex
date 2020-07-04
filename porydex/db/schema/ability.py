@@ -80,7 +80,7 @@ class PokemonAbility(TableBase):
     pokemon_id = sa.Column(sa.ForeignKey(Pokemon.id), primary_key=True)
     form_id = sa.Column(sa.Integer, primary_key=True)
     ability_id = sa.Column(sa.ForeignKey(Ability.id), primary_key=True)
-    slot = sa.Column(sa.Enum(AbilitySlot))
+    slot = sa.Column(sa.Enum(AbilitySlot), nullable=False)
 
     __table_args__ = (
         pokemon_form_key(),
