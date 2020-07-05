@@ -43,6 +43,19 @@ def generation_pokemon_form_key():
          'generation_pokemon_forms.form_id']
     )
 
+def game_pokemon_form_key():
+    """Return a new ForeignKeyConstraint describing a composite key to
+    game_pokemon_forms.
+    """
+
+    return sa.ForeignKeyConstraint(
+        ['game_id', 'pokemon_id', 'form_id'],
+        ['game_pokemon_forms.game_id',
+         'game_pokemon_forms.pokemon_id',
+         'game_pokemon_forms.form_id']
+    )
+
+
 
 class Pokemon(TableBase, ExistsByGeneration, ByLanguage):
     """One of the 802 (as of Generation 7) species of Pokémon."""
