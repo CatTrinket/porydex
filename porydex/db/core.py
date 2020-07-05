@@ -69,7 +69,7 @@ class PorydexSession(sa.orm.Session):
         self.generation = generation
 
 
-def connect(uri):
+def connect(uri, echo=False):
     """Connect to the db and return a session."""
 
-    return PorydexSession(bind=sa.create_engine(uri))
+    return PorydexSession(bind=sa.create_engine(uri, echo=echo))
