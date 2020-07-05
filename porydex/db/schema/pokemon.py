@@ -213,12 +213,15 @@ class GenerationPokemonForm(TableBase):
         'Type', secondary='pokemon_types', order_by='PokemonType.slot',
         lazy='selectin')
 
+    pokemon_form = sa.orm.relationship(PokemonForm)
+
 class GamePokemonForm(TableBase):
     """A game that a Pokémon form appears in."""
 
     __tablename__ = 'game_pokemon_forms'
     __table_args__ = (
         generation_pokemon_form_key(),
+        pokemon_form_key(),
         sa.ForeignKeyConstraint(
             ['game_id', 'generation_id'],
             ['games.id', 'games.generation_id']
@@ -234,3 +237,6 @@ class GamePokemonForm(TableBase):
 
     # Temporarily nullable
     ingame_internal_id = sa.Column(sa.Integer, nullable=True)
+
+    game = sa.orm.relationship('Game', foreign_keys=[game_id])
+    pokemon_form = sa.orm.relationship(PokemonForm)

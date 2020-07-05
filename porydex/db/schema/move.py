@@ -1,6 +1,7 @@
 import enum
 
 import sqlalchemy as sa
+import sqlalchemy.orm
 
 from .game import Game
 from .language import ByLanguage
@@ -120,6 +121,12 @@ class PokemonMove(TableBase):
         """
     )
 
+    pokemon_move_list = sa.orm.relationship(
+        PokemonMoveList,
+        backref=sa.orm.backref('pokemon_moves', order_by=move_id)
+    )
+    move = sa.orm.relationship(Move, foreign_keys=[move_id])
+
     __table_args__ = (
         sa.Index(
             'pokemon_moves_unique_index',
@@ -164,5 +171,8 @@ class PokemonMoveListMap(TableBase):
     form_id = sa.Column(sa.Integer, primary_key=True)
     method = sa.Column(sa.Enum(PokemonMoveMethod), primary_key=True)
     pokemon_move_list_id = sa.Column(sa.ForeignKey(PokemonMoveList.id))
+
+    pokemon_move_list = sa.orm.relationship(PokemonMoveList)
+    game = sa.orm.relationship(Game)
 
     __table_args__ = (pokemon_form_key(), game_pokemon_form_key())
