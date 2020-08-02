@@ -38441,7 +38441,7 @@ game_id,pokemon_id,form_id,method,pokemon_move_list_id
 25,778,1,machine,10037
 25,778,2,level,10035
 25,778,2,egg,10036
-25,778,2,machine,10038
+25,778,2,machine,10037
 25,779,1,level,10039
 25,779,1,egg,10040
 25,779,1,machine,10041
@@ -41342,7 +41342,7 @@ game_id,pokemon_id,form_id,method,pokemon_move_list_id
 26,778,1,machine,10037
 26,778,2,level,10035
 26,778,2,egg,10036
-26,778,2,machine,10038
+26,778,2,machine,10037
 26,779,1,level,10039
 26,779,1,egg,10040
 26,779,1,machine,10041
