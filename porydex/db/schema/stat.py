@@ -1,11 +1,10 @@
 import sqlalchemy as sa
 import sqlalchemy.orm
 
-from porydex.db.schema.game import Generation
+from porydex.db.schema.game import Game
 from porydex.db.schema.language import ByLanguage, Language
 from porydex.db.schema.pokemon import (
-    GenerationPokemonForm, Pokemon, generation_pokemon_form_key,
-    pokemon_form_key)
+    Pokemon, PokemonInstance, pokemon_form_key, pokemon_instance_key)
 from porydex.db.core import TableBase
 
 
@@ -43,9 +42,9 @@ class StatName(TableBase):
 
 class PokemonStat(TableBase):
     __tablename__ = 'pokemon_stats'
-    __table_args__ = (pokemon_form_key(), generation_pokemon_form_key())
+    __table_args__ = (pokemon_form_key(), pokemon_instance_key())
 
-    generation_id = sa.Column(sa.ForeignKey(Generation.id), primary_key=True)
+    game_id = sa.Column(sa.ForeignKey(Game.id), primary_key=True)
     pokemon_id = sa.Column(sa.ForeignKey(Pokemon.id), primary_key=True)
     form_id = sa.Column(sa.Integer, primary_key=True)
     stat_id = sa.Column(sa.ForeignKey(Stat.id), primary_key=True)
@@ -70,8 +69,8 @@ class PokemonStat(TableBase):
         """
     )
 
-    _generation_pokemon_form = sa.orm.relationship(
-        GenerationPokemonForm,
+    pokemon_instance = sa.orm.relationship(
+        PokemonInstance,
         backref=sa.orm.backref('stats', order_by=stat_id, lazy='selectin')
     )
     stat = sa.orm.relationship(Stat, lazy='joined')

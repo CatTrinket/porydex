@@ -1,9 +1,9 @@
 import sqlalchemy as sa
 
-from porydex.db.schema.game import Generation
+from porydex.db.schema.game import Game
 from porydex.db.schema.language import ByLanguage, Language
 from porydex.db.schema.pokemon import (
-    Pokemon, pokemon_form_key, generation_pokemon_form_key)
+    Pokemon, pokemon_form_key, pokemon_instance_key)
 from porydex.db.core import TableBase
 
 
@@ -38,7 +38,7 @@ class EggGroupName(TableBase):
     )
 
 class PokemonEggGroup(TableBase):
-    """An egg group that a Pokémon form is in in a particular generation.
+    """An egg group that a Pokémon form is in in a particular game.
 
     This is attached to individual forms because Cosplay Pikachu, Ash-Greninja,
     et al. are unable to breed, and are thus in Undiscovered rather than the
@@ -50,9 +50,9 @@ class PokemonEggGroup(TableBase):
     """
 
     __tablename__ = 'pokemon_egg_groups'
-    __table_args__ = (pokemon_form_key(), generation_pokemon_form_key())
+    __table_args__ = (pokemon_form_key(), pokemon_instance_key())
 
-    generation_id = sa.Column(sa.ForeignKey(Generation.id), primary_key=True)
+    game_id = sa.Column(sa.ForeignKey(Game.id), primary_key=True)
     pokemon_id = sa.Column(sa.ForeignKey(Pokemon.id), primary_key=True)
     form_id = sa.Column(sa.Integer, primary_key=True)
     egg_group_id = sa.Column(sa.ForeignKey(EggGroup.id), primary_key=True)

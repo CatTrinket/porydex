@@ -1,8 +1,8 @@
 import sqlalchemy as sa
 from sqlalchemy.ext.associationproxy import association_proxy
+from sqlalchemy.orm.collections import MappedCollection
 
 from ..core import TableBase
-from ..util import attr_ordereddict_collection
 
 
 ENGLISH_ID = 3
@@ -37,7 +37,7 @@ class ByLanguage():
         # XXX The key should ideally be something nicer than just an id
         return sa.orm.relationship(
             self._by_language_class_name,
-            collection_class=attr_ordereddict_collection('language_id'),
+            collection_class=MappedCollection(lambda row: row.language_id),
             order_by='{0}.language_id'.format(self._by_language_class_name),
             lazy='selectin'
         )

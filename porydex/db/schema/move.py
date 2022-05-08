@@ -6,16 +6,14 @@ import sqlalchemy.orm
 from .game import Game
 from .language import ByLanguage
 from .pokemon import (
-    Pokemon, PokemonForm, game_pokemon_form_key, pokemon_form_key)
+    Pokemon, PokemonForm, pokemon_form_key, pokemon_instance_key)
 from ..core import TableBase
-from ..util import ExistsByGeneration
 
 
-class Move(TableBase, ExistsByGeneration, ByLanguage):
+class Move(TableBase, ByLanguage):
     """A move (e.g. Tackle, Growl)."""
 
     __tablename__ = 'moves'
-    _by_generation_class_name = 'GenerationMove'
     _by_language_class_name = 'MoveName'
 
     id = sa.Column(sa.Integer, primary_key=True)
@@ -34,13 +32,13 @@ class MoveName(TableBase):
     name = sa.Column(sa.Text, nullable=False)
 
 
-class GenerationMove(TableBase):
-    """A generation that a move appears in."""
+class MoveInstance(TableBase):
+    """A move as it appears in a particular game."""
 
-    __tablename__ = 'generation_moves'
+    __tablename__ = 'move_instances'
 
-    generation_id = sa.Column(sa.Integer, sa.ForeignKey('generations.id'),
-                              primary_key=True)
+    game_id = sa.Column(sa.Integer, sa.ForeignKey('games.id'),
+                        primary_key=True)
     move_id = sa.Column(sa.Integer, sa.ForeignKey('moves.id'),
                         primary_key=True)
 
@@ -66,7 +64,12 @@ class MoveMachine(TableBase):
     machine_type = sa.Column(sa.Enum(MoveMachineType), nullable=False)
     number = sa.Column(sa.Integer, nullable=False)
 
-    __table_args__ = (sa.UniqueConstraint(game_id, machine_type, number),)
+    __table_args__ = (
+        sa.UniqueConstraint(game_id, machine_type, number),
+        sa.ForeignKeyConstraint(
+            [game_id, move_id], [MoveInstance.game_id, MoveInstance.move_id]
+        )
+    )
 
 
 class PokemonMoveList(TableBase):
@@ -175,4 +178,4 @@ class PokemonMoveListMap(TableBase):
     pokemon_move_list = sa.orm.relationship(PokemonMoveList)
     game = sa.orm.relationship(Game)
 
-    __table_args__ = (pokemon_form_key(), game_pokemon_form_key())
+    __table_args__ = (pokemon_form_key(), pokemon_instance_key())
