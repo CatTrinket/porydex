@@ -1,6 +1,6 @@
 import sqlalchemy as sa
 from sqlalchemy.ext.associationproxy import association_proxy
-from sqlalchemy.orm.collections import MappedCollection
+from sqlalchemy.orm.collections import mapped_collection
 
 from ..core import TableBase
 
@@ -26,19 +26,20 @@ class ByLanguage():
     separate table of names in different languages.
     """
 
+    # XXX Why did I comment this out
     #_by_language_class_name = None
 
     names = association_proxy('_names', 'name')
 
     @sa.ext.declarative.declared_attr
-    def _names(self):
+    def _names(cls):
         """A relationship to this item's name in all languages."""
 
         # XXX The key should ideally be something nicer than just an id
         return sa.orm.relationship(
-            self._by_language_class_name,
-            collection_class=MappedCollection(lambda row: row.language_id),
-            order_by='{0}.language_id'.format(self._by_language_class_name),
+            cls._by_language_class_name,
+            collection_class=mapped_collection(lambda row: row.language_id),
+            order_by='{0}.language_id'.format(cls._by_language_class_name),
             lazy='selectin'
         )
 
