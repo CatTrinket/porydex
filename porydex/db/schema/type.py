@@ -19,8 +19,14 @@ class Type(TableBase, ByLanguage):
     id = sa.Column(sa.Integer, primary_key=True)
     identifier = sa.Column(sa.Unicode, unique=True, nullable=False)
 
+    pokemon_instances = sa.orm.relationship(
+        'PokemonInstance',
+        secondary='pokemon_types',
+        backref=sa.orm.backref('types', order_by='PokemonType.slot')
+    )
+
 class TypeName(TableBase):
-    """A Pokémon's name in a particular language."""
+    """A type's name in a particular language."""
 
     __tablename__ = 'type_names'
 
@@ -41,9 +47,6 @@ class PokemonType(TableBase):
     form_id = sa.Column(sa.Integer, primary_key=True, autoincrement=False)
     slot = sa.Column(sa.Integer, primary_key=True, autoincrement=False)
     type_id = sa.Column(sa.Integer, sa.ForeignKey('types.id'))
-
-    pokemon = sa.orm.relationship('PokemonForm', lazy='joined')
-    type = sa.orm.relationship('Type', lazy='joined')
 
     __table_args__ = (
         pokemon_form_key(),
