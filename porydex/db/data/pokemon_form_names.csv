@@ -1,9 +1,11 @@
 language_id,pokemon_id,form_id,form_name,full_name
 3,3,2,Mega Venusaur,Mega Venusaur
+3,3,3,Gigantamax,Gigantamax Venusaur
 3,6,2,Mega Charizard X,Mega Charizard X
 3,6,3,Mega Charizard Y,Mega Charizard Y
 3,6,4,Gigantamax,Gigantamax Charizard
 3,9,2,Mega Blastoise,Mega Blastoise
+3,9,3,Gigantamax,Gigantamax Blastoise
 3,12,2,Gigantamax,Gigantamax Butterfree
 3,15,2,Mega Beedrill,Mega Beedrill
 3,18,2,Mega Pidgeot,Mega Pidgeot
@@ -24,6 +26,7 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,25,14,Partner Cap,Partner Cap Pikachu
 3,25,15,Partner Pikachu,Partner Pikachu
 3,25,16,Gigantamax,Gigantamax Pikachu
+3,25,17,World Cap,World Cap Pikachu
 3,26,2,Alolan Form,Alolan Raichu
 3,27,2,Alolan Form,Alolan Sandshrew
 3,28,2,Alolan Form,Alolan Sandslash
@@ -42,7 +45,9 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,76,2,Alolan Form,Alolan Golem
 3,77,2,Galarian Form,Galarian Ponyta
 3,78,2,Galarian Form,Galarian Rapidash
+3,79,2,Galarian Form,Galarian Slowpoke
 3,80,2,Mega Slowbro,Mega Slowbro
+3,80,3,Galarian Form,Galarian Slowbro
 3,83,2,Galarian Form,Galarian Farfetch'd
 3,88,2,Alolan Form,Alolan Grimer
 3,89,2,Alolan Form,Alolan Muk
@@ -61,10 +66,14 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,133,3,Gigantamax,Gigantamax Eevee
 3,142,2,Mega Aerodactyl,Mega Aerodactyl
 3,143,2,Gigantamax,Gigantamax Snorlax
+3,144,2,Galarian Form,Galarian Articuno
+3,145,2,Galarian Form,Galarian Zapdos
+3,146,2,Galarian Form,Galarian Moltres
 3,150,2,Mega Mewtwo X,Mega Mewtwo X
 3,150,3,Mega Mewtwo Y,Mega Mewtwo Y
 3,172,2,Spiky-Eared Pichu,Spiky-Eared Pichu
 3,181,2,Mega Ampharos,Mega Ampharos
+3,199,2,Galarian Form,Galarian Slowking
 3,201,1,Unown A,Unown A
 3,201,2,Unown B,Unown B
 3,201,3,Unown C,Unown C
@@ -318,6 +327,9 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,800,4,Ultra Necrozma,Ultra Necrozma
 3,801,2,Original Color,Original Magearna
 3,809,2,Gigantamax,Gigantamax Melmetal
+3,812,2,Gigantamax,Gigantamax Rillaboom
+3,815,2,Gigantamax,Gigantamax Cinderace
+3,818,2,Gigantamax,Gigantamax Inteleon
 3,823,2,Gigantamax,Gigantamax Corviknight
 3,826,2,Gigantamax,Gigantamax Orbeetle
 3,834,2,Gigantamax,Gigantamax Drednaw
@@ -360,3 +372,10 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,889,1,Hero of Many Battles,Zamazenta
 3,889,2,Crowned Shield,Crowned Shield Zamazenta
 3,890,2,Eternamax,Eternamax Eternatus
+3,892,1,Single Strike Style,Single Strike Urshifu
+3,892,2,Rapid Strike Style,Rapid Strike Urshifu
+3,892,3,Single Strike/G-Max,Gigantamax Single Strike Urshifu
+3,892,4,Rapid Strike/G-Max,Gigantamax Rapid Strike Urshifu
+3,893,2,Dada,Dada Zarude
+3,898,2,Ice Rider,Ice Calyrex
+3,898,3,Shadow Rider,Shadow Calyrex
