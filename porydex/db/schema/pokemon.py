@@ -109,6 +109,7 @@ class PokemonInstance(TableBase):
                         primary_key=True)
     pokemon_id = sa.Column(sa.Integer, primary_key=True, autoincrement=False)
     form_id = sa.Column(sa.Integer, primary_key=True, autoincrement=False)
+    is_current = sa.Column(sa.Boolean, nullable=False)
 
     # Temporarily nullable
     ingame_internal_id = sa.Column(sa.Integer, nullable=True)
