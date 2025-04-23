@@ -27,7 +27,7 @@ id,identifier,generation_id,type_chart_id
 26,moon,7,3
 27,ultra-sun,7,3
 28,ultra-moon,7,3
-29,sword,8,3
-30,shield,8,3
-10003,lets-go-pikachu,10001,3
-10004,lets-go-eevee,10001,3
+29,lets-go-pikachu,10001,3
+30,lets-go-eevee,10001,3
+31,sword,8,3
+32,shield,8,3
