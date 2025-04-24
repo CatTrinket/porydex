@@ -38,6 +38,8 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,52,3,Galarian Form,Galarian Meowth
 3,52,4,Gigantamax,Gigantamax Meowth
 3,53,2,Alolan Form,Alolan Persian
+3,58,2,Hisuian Form,Hisuian Growlithe
+3,59,2,Hisuian Form,Hisuian Arcanine
 3,65,2,Mega Alakazam,Mega Alakazam
 3,68,2,Gigantamax,Gigantamax Machamp
 3,74,2,Alolan Form,Alolan Geodude
@@ -54,6 +56,8 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,94,2,Mega Gengar,Mega Gengar
 3,94,3,Gigantamax,Gigantamax Gengar
 3,99,2,Gigantamax,Gigantamax Kingler
+3,100,2,Hisuian Form,Hisuian Voltorb
+3,101,2,Hisuian Form,Hisuian Electrode
 3,103,2,Alolan Form,Alolan Exeggutor
 3,105,2,Alolan Form,Alolan Marowak
 3,110,2,Galarian Form,Galarian Weezing
@@ -71,6 +75,7 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,146,2,Galarian Form,Galarian Moltres
 3,150,2,Mega Mewtwo X,Mega Mewtwo X
 3,150,3,Mega Mewtwo Y,Mega Mewtwo Y
+3,157,2,Hisuian Form,Hisuian Typhlosion
 3,172,2,Spiky-Eared Pichu,Spiky-Eared Pichu
 3,181,2,Mega Ampharos,Mega Ampharos
 3,199,2,Galarian Form,Galarian Slowking
@@ -103,8 +108,10 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,201,27,Unown !,Unown !
 3,201,28,Unown ?,Unown ?
 3,208,2,Mega Steelix,Mega Steelix
+3,211,2,Hisuian Form,Hisuian Qwilfish
 3,212,2,Mega Scizor,Mega Scizor
 3,214,2,Mega Heracross,Mega Heracross
+3,215,2,Hisuian Form,Hisuian Sneasel
 3,222,2,Galarian Form,Galarian Corsola
 3,229,2,Mega Houndoom,Mega Houndoom
 3,248,2,Mega Tyranitar,Mega Tyranitar
@@ -161,6 +168,8 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,479,4,Frost Rotom,Frost Rotom
 3,479,5,Fan Rotom,Fan Rotom
 3,479,6,Mow Rotom,Mow Rotom
+3,483,2,Origin Forme,Origin Dialga
+3,484,2,Origin Forme,Origin Palkia
 3,487,1,Altered Forme,Altered Giratina
 3,487,2,Origin Forme,Origin Giratina
 3,492,1,Land Forme,Land Shaymin
@@ -183,9 +192,12 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,493,16,Dark Type,Dark Arceus
 3,493,17,Steel Type,Steel Arceus
 3,493,18,Fairy Type,Fairy Arceus
+3,503,2,Hisuian Form,Hisuian Samurott
 3,531,2,Mega Audino,Mega Audino
+3,549,2,Hisuian Form,Hisuian Lilligant
 3,550,1,Red-Striped Form,Red-Striped Basculin
 3,550,2,Blue-Striped Form,Blue-Striped Basculin
+3,550,3,White-Striped Form,White-Striped Basculin
 3,554,2,Galarian Form,Galarian Darumaka
 3,555,1,Standard Mode,Standard Darmanitan
 3,555,2,Zen Mode,Zen Darmanitan
@@ -193,6 +205,8 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,555,4,Zen Galarian Form,Zen Galarian Darmanitan
 3,562,2,Galarian Form,Galarian Yamask
 3,569,2,Gigantamax,Gigantamax Garbodor
+3,570,2,Hisuian Form,Hisuian Zorua
+3,571,2,Hisuian Form,Hisuian Zoroark
 3,585,1,Spring Form,Spring Deerling
 3,585,2,Summer Form,Summer Deerling
 3,585,3,Autumn Form,Autumn Deerling
@@ -202,6 +216,7 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,586,3,Autumn Form,Autumn Sawsbuck
 3,586,4,Winter Form,Winter Sawsbuck
 3,618,2,Galarian Form,Galarian Stunfisk
+3,628,2,Hisuian Form,Hisuian Braviary
 3,641,1,Incarnate Forme,Incarnate Tornadus
 3,641,2,Therian Forme,Therian Tornadus
 3,642,1,Incarnate Forme,Incarnate Thundurus
@@ -269,6 +284,8 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,678,2,Male,Male Meowstic
 3,681,1,Shield Forme,Shield Aegislash
 3,681,2,Blade Forme,Blade Aegislash
+3,705,2,Hisuian Form,Hisuian Sliggoo
+3,706,2,Hisuian Form,Hisuian Goodra
 3,710,1,Small Size,Small Pumpkaboo
 3,710,2,Average Size,Average Pumpkaboo
 3,710,3,Large Size,Large Pumpkaboo
@@ -277,6 +294,7 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,711,2,Average Size,Average Gourgeist
 3,711,3,Large Size,Large Gourgeist
 3,711,4,Super Size,Super Gourgeist
+3,713,2,Hisuian Form,Hisuian Avalugg
 3,716,1,Neutral Mode,Neutral Xerneas
 3,716,2,Active Mode,Active Xerneas
 3,718,1,10% Forme,10% Zygarde
@@ -285,6 +303,7 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,719,2,Mega Diancie,Mega Diancie
 3,720,1,Hoopa Confined,Hoopa Confined
 3,720,2,Hoopa Unbound,Hoopa Unbound
+3,724,2,Hisuian Form,Hisuian Decidueye
 3,741,1,Baile Style,Baile Oricorio
 3,741,2,Pom-Pom Style,Pom-Pom Oricorio
 3,741,3,Pa'u Style,Pa'u Oricorio
@@ -379,3 +398,7 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,893,2,Dada,Dada Zarude
 3,898,2,Ice Rider,Ice Calyrex
 3,898,3,Shadow Rider,Shadow Calyrex
+3,902,1,Female,Female Basculegion
+3,902,2,Male,Male Basculegion
+3,905,1,Incarnate Forme,Incarnate Enamorus
+3,905,2,Therian Forme,Therian Enamorus
