@@ -44,7 +44,7 @@ def load_table(table, connection):
     # however, we can just use the order column.
     # XXX Do this right someday
     if table.name == 'pokemon':
-        rows.sort(key=lambda row: row['order'])
+        rows.sort(key=lambda row: int(row['order']))
 
     connection.execute(table.insert(), rows)
 
