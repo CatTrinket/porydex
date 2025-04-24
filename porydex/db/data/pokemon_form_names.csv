@@ -64,6 +64,9 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,115,2,Mega Kangaskhan,Mega Kangaskhan
 3,122,2,Galarian Form,Galarian Mr. Mime
 3,127,2,Mega Pinsir,Mega Pinsir
+3,128,2,Paldean/Combat,Combat Paldean Tauros
+3,128,3,Paldean/Blaze,Blaze Paldean Tauros
+3,128,4,Paldean/Aqua,Aqua Paldean Tauros
 3,130,2,Mega Gyarados,Mega Gyarados
 3,131,2,Gigantamax,Gigantamax Lapras
 3,133,2,Partner Eevee,Partner Eevee
@@ -78,6 +81,7 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,157,2,Hisuian Form,Hisuian Typhlosion
 3,172,2,Spiky-Eared Pichu,Spiky-Eared Pichu
 3,181,2,Mega Ampharos,Mega Ampharos
+3,194,2,Paldean Form,Paldean Wooper
 3,199,2,Galarian Form,Galarian Slowking
 3,201,1,Unown A,Unown A
 3,201,2,Unown B,Unown B
@@ -398,7 +402,36 @@ language_id,pokemon_id,form_id,form_name,full_name
 3,893,2,Dada,Dada Zarude
 3,898,2,Ice Rider,Ice Calyrex
 3,898,3,Shadow Rider,Shadow Calyrex
+3,901,2,Bloodmoon,Bloodmoon Ursaluna
 3,902,1,Female,Female Basculegion
 3,902,2,Male,Male Basculegion
 3,905,1,Incarnate Forme,Incarnate Enamorus
 3,905,2,Therian Forme,Therian Enamorus
+3,916,1,Female,Female Oinkologne
+3,916,2,Male,Male Oinkologne
+3,925,1,Family of Three,Family of Three Maushold
+3,925,2,Family of Four,Family of Four Maushold
+3,931,1,Green Plumage,Green Squawkabilly
+3,931,2,Blue Plumage,Blue Squawkabilly
+3,931,3,Yellow Plumage,Yellow Squawkabilly
+3,931,4,White Plumage,White Squawkabilly
+3,964,1,Zero Form,Zero Palafin
+3,964,2,Hero Form,Hero Palafin
+3,978,1,Curly Form,Curly Tatsugiri
+3,978,2,Droopy Form,Droopy Tatsugiri
+3,978,3,Stretchy Form,Stretchy Tatsugiri
+3,982,1,Two-Segment Form,Two-Segment Dudunsparce
+3,982,2,Three-Segment Form,Three-Segment Dudunsparce
+3,999,1,Chest Form,Chest Gimmighoul
+3,999,2,Roaming Form,Roaming Gimmighoul
+3,1012,1,Counterfeit Form,Counterfeit Poltchageist
+3,1012,2,Artisan Form,Artisan Poltchageist
+3,1013,1,Unremarkable Form,Unremarkable Sinistcha
+3,1013,2,Masterpiece Form,Masterpiece Sinistcha
+3,1017,1,Teal Mask,Teal Ogerpon
+3,1017,2,Wellspring Mask,Wellspring Ogerpon
+3,1017,3,Hearthflame Mask,Hearthflame Ogerpon
+3,1017,4,Cornerstone Mask,Cornerstone Ogerpon
+3,1024,1,Normal Form,Normal Terapagos
+3,1024,2,Terastal Form,Terastal Terapagos
+3,1024,3,Stellar Form,Stellar Terapagos

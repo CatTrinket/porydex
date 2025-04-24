@@ -6,7 +6,9 @@ update pokemon_instances set is_current = (game_id, pokemon_id, form_id) in (
             rank() over (
                 partition by pi.pokemon_id, pi.form_id
                 order by
-                    g.id in ('lets-go-pikachu', 'lets-go-eevee', 'legends-arceus'),
+                    g.identifier in (
+                        'lets-go-pikachu', 'lets-go-eevee', 'legends-arceus'
+                    ),
                     g.id desc
             ) as rank
         from
