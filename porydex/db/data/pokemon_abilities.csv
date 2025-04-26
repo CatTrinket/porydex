@@ -32173,7 +32173,9 @@ game_id,pokemon_id,form_id,ability_id,slot
 31,716,2,187,ability_1
 31,717,1,186,ability_1
 31,718,1,188,ability_1
+31,718,1,211,unique_ability
 31,718,2,188,ability_1
+31,718,2,211,unique_ability
 31,718,3,211,ability_1
 31,719,1,29,ability_1
 31,721,1,11,ability_1
@@ -32204,6 +32206,7 @@ game_id,pokemon_id,form_id,ability_id,slot
 31,743,1,19,ability_2
 31,743,1,118,ability_1
 31,743,1,175,hidden_ability
+31,744,1,20,unique_ability
 31,744,1,51,ability_1
 31,744,1,72,ability_2
 31,744,1,80,hidden_ability
@@ -34051,7 +34054,9 @@ game_id,pokemon_id,form_id,ability_id,slot
 32,716,2,187,ability_1
 32,717,1,186,ability_1
 32,718,1,188,ability_1
+32,718,1,211,unique_ability
 32,718,2,188,ability_1
+32,718,2,211,unique_ability
 32,718,3,211,ability_1
 32,719,1,29,ability_1
 32,721,1,11,ability_1
@@ -34082,6 +34087,7 @@ game_id,pokemon_id,form_id,ability_id,slot
 32,743,1,19,ability_2
 32,743,1,118,ability_1
 32,743,1,175,hidden_ability
+32,744,1,20,unique_ability
 32,744,1,51,ability_1
 32,744,1,72,ability_2
 32,744,1,80,hidden_ability
