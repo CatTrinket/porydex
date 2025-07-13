@@ -7,6 +7,7 @@ from .game import Game
 from .language import ByLanguage
 from .pokemon import (
     Pokemon, PokemonForm, pokemon_form_key, pokemon_instance_key)
+from .type import Type
 from ..core import TableBase
 
 
@@ -32,6 +33,17 @@ class MoveName(TableBase):
     name = sa.Column(sa.Text, nullable=False)
 
 
+class DamageCategory(enum.Enum):
+    """An enum for the three damage categories moves can have."""
+
+    status = enum.auto()
+    physical = enum.auto()
+    special = enum.auto()
+
+    def __str__(self):
+        return self.name
+
+
 class MoveInstance(TableBase):
     """A move as it appears in a particular game."""
 
@@ -41,6 +53,16 @@ class MoveInstance(TableBase):
                         primary_key=True)
     move_id = sa.Column(sa.Integer, sa.ForeignKey('moves.id'),
                         primary_key=True)
+    type_id = sa.Column(sa.Integer, sa.ForeignKey(Type.id))
+    category = sa.Column(sa.Enum(DamageCategory))
+    power = sa.Column(sa.Integer)
+    accuracy = sa.Column(sa.Integer)
+    pp = sa.Column(sa.Integer)
+    priority = sa.Column(sa.Integer)
+    is_current = sa.Column(sa.Boolean)
+
+    move = sa.orm.relationship(Move)
+    type = sa.orm.relationship(Type)
 
 
 class MoveMachineType(enum.Enum):
